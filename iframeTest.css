@@ -1,3 +1,6 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+
+/* custom */
 .forge-flow {
   background: black;
 }
@@ -17,4 +20,362 @@
   > div
   > div {
   max-width: 50%;
+}
+/* end of custom */
+body,
+.forge-flow {
+  font-family: "Open Sans", sans-serif;
+  background-color: #fff;
+}
+
+#page-title {
+  margin-bottom: 30px;
+}
+
+#page-title::after {
+  display: none;
+}
+
+.form-group .ant-form-item-label {
+  padding-bottom: 8px;
+}
+
+.form-group label > span {
+  color: #7b858e;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.form-group input {
+  border: 1px solid #dcdde2;
+  border-radius: 5px;
+  font-size: 14px;
+  padding: 10px 15px;
+}
+
+button.circle-icon-button-container[disabled] .button-circle {
+  background: transparent !important;
+}
+
+.forge-flow > div:last-child {
+  background: #f8f8f8;
+  box-shadow: none;
+}
+
+body .ant-input:hover,
+body .ant-input:focus,
+body .ant-input:active,
+body .ant-form-item-has-error .ant-input:hover,
+body .ant-form-item-has-error .ant-input:active,
+body .ant-form-item-has-error .ant-input:focus {
+  border-right-width: 1px !important;
+}
+
+.form-group input:focus {
+  border: 1px solid #4a4dcd;
+  background-color: #f5f7fe;
+}
+
+.ant-btn {
+  border-radius: 5px;
+}
+
+.ant-btn.ant-btn-cta,
+.ant-btn.ant-btn-cta:hover,
+.ant-btn.ant-btn-cta:active {
+  background: #3740f5;
+  color: white;
+}
+
+.ant-btn.ant-btn-link,
+.ant-btn.ant-btn-link:hover,
+.ant-btn.ant-btn-link:active {
+  color: #3740f5;
+}
+
+/* Example stylesheet */
+
+/*
+  Common styles. These are used on every part of the Workflow/Signing process.
+*/
+
+/* The smaller of the titles on each Forge/webform page. This usually contains your Organization name */
+#header-title {
+  color: blue;
+}
+
+/* The larger of the titles on each Forge/webform page. This usually contains the title of the webform itself */
+#page-title {
+  color: cadetblue;
+}
+
+/* Controls the border underneath `#page-title`. This is usually the Anvil green color. */
+#page-title::after {
+  background-color: red;
+}
+
+/* The bottom area containing the submit and save buttons on each webform */
+.button-bar {
+  border: 1px solid black;
+}
+
+/* The main submit button for the webform. Background usually the Anvil green color with text as a dark grey. */
+.button-bar .forge-submit {
+  background-color: chocolate;
+  color: black;
+}
+
+/*
+  Not an Anvil-specific selector, but for input fields, `<input-field>::placeholder` can be used
+  to select a text input's placeholder. See "Webform input examples" on what to use to select
+  form fields.
+ */
+.form-group input.ant-input::placeholder {
+  color: red;
+}
+
+/*
+  Page descriptions exist on almost all pages if text is provided.
+  For webforms, it can be blank since it's optional in the webform editor.
+  There are also description elements when finishing a webform or when on the
+  signing page.
+ */
+
+/*
+  Selects all page descriptions -- will affect webforms, signing descriptions
+  and confirm webform data pages.
+*/
+.page-description {
+  border: 1px solid black;
+}
+
+/* Descriptions on each webform page */
+.forge-page-description {
+}
+/*
+  Descriptions on each webform finish page -- this page is where a user
+  confirms their data.
+*/
+.forge-finish-page-description {
+}
+/* Descriptions on the signing page */
+.etch-page-description {
+}
+
+/*
+  Webform styles. These are styles specifically on the webform pages.
+*/
+
+/* This is the submit button when the user confirms all their webform data -- the finish page */
+.button-bar #finish-btn {
+  background-color: darksalmon;
+  color: black;
+}
+
+/*
+  This is the submit button after a user submits their webform, but before a user signs.
+  The user will click this button to go to the signing page.
+*/
+.button-bar #review-and-sign-btn {
+  background-color: aqua;
+  color: black;
+}
+
+/**
+  Webform input examples
+ */
+
+/**
+  In general, form items are in the form of `.label-<the-field's-label>` with spaces and special characters
+  replaced with `-`. So a field with the label "Full Name" will have the class `.label-full-name`.
+
+  Note that this also means that if your webform gets updated and its label is changed, your CSS must also change.
+*/
+
+/**
+  Common selector for all form groups. Form groups are elements that contain
+  both the label and the input field.
+ */
+.form-group {
+}
+.form-group label {
+}
+.form-group input {
+}
+
+/*
+  Field descriptions. These are optional text descriptions that show under a
+  field's label. By default they're a light grey color.
+ */
+.form-group .form-item-description {
+}
+
+/**
+  Any field feedback can be selected with `.form-item-help`. This class is
+  commonly used when there's a required field.
+ */
+.form-group .form-item-help {
+}
+
+/**
+  You can narrow down your selection even further by using the field's type.
+  Examples below. In general, they will be all "form-group-<type>" with the
+  <type> in all lowercase, and spaces removed.
+ */
+/** Short text inputs */
+.form-group-shorttext {
+}
+.form-group-email {
+}
+.form-group-phone {
+}
+.form-group-ssn {
+}
+.form-group-dollar {
+}
+
+/** Full name field and its subfields */
+.form-group-fullname {
+}
+.form-group-fullname .first-name {
+}
+.form-group-fullname .middle-name {
+}
+.form-group-fullname .last-name {
+}
+
+/** Date picker field */
+.form-group-date {
+}
+/** The actual date picker input */
+.form-group-date .ant-picker {
+}
+
+/** US Address and its subfields */
+.form-group-usaddress {
+}
+.form-group-usaddress .street-address {
+}
+.form-group-usaddress .city {
+}
+.form-group-usaddress .state {
+}
+.form-group-usaddress .zip {
+}
+
+/** Date dropdowns. This field has dropdowns for month, day and year */
+.form-group-dateselect {
+}
+.form-group-dateselect .month {
+}
+.form-group-dateselect .day {
+}
+.form-group-dateselect .year {
+}
+
+/** Dropdown fields */
+.form-group-select {
+}
+/** The actual dropdown input */
+.form-group-select .ant-select {
+}
+
+.form-group-agentselector {
+}
+
+/**
+  Signature Page Styles
+ */
+
+/* Controls all signing messages */
+.workflow-message {
+}
+
+/* Controls warning signing messages. You may see a warning message when you're logged in as an admin */
+.workflow-message-warning {
+}
+.workflow-message-error {
+}
+.workflow-message-info {
+}
+
+/* Groups the entire list of steps for creating a signature */
+.signature-actions-list {
+}
+.signature-action-draw-signature {
+}
+.signature-action-item-container {
+}
+
+/*
+  Class for each of the number step of the signing process.
+  This groups `.action-item-title` and `.action-item-description` classes
+ */
+.signature-action-item {
+}
+
+/* Title within an action item */
+.action-item-title {
+  color: #999;
+}
+
+/* Description within an action item */
+.action-item-description {
+  color: #999;
+}
+
+/*
+  Groups the "Draw your signature" step.
+  Numbered step, title, description, signature pad and accept signature button.
+ */
+.signature-action-draw-signature {
+}
+
+/* "I accept my signature" button after drawing your signature */
+#signature-accept-btn {
+}
+
+/* This controls the color of the accept signature button when it's disabled -- before a user creates a signature */
+#signature-accept-btn[disabled] {
+  background-color: red;
+}
+
+/* Drawing area for signature */
+#signature-pad {
+  border: 1px solid blue;
+}
+
+/* Signature area after user accepts their signature */
+#signature-display {
+  background: lightblue;
+}
+
+/*
+  Groups the "sign all documents" step.
+  Numbered step, title, description, checkbox and text
+ */
+.signature-action-review {
+  background: lightcyan;
+}
+
+/* Container that contains the "Start signing" and "Sign all" buttons */
+.signature-accept-actions {
+}
+
+/* The "Start signing" button */
+#signature-next-btn {
+}
+
+/* Contains all the PDFs visible to the user */
+.signature-accept-file-list {
+}
+
+/**
+  Download files page styles
+ */
+
+/* When the user is done with the entire workflow (webforms and signing). This is the "Download" button. */
+#download-file-btn {
+  background-color: darkblue;
+  color: white;
 }
