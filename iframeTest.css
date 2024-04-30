@@ -1,8 +1,20 @@
 .forge-flow {
-  background: red;
+  background: black;
 }
 
 .h1,
 .h2.h3.h4 {
-  color: black;
+  color: white;
+}
+
+#root
+  > div
+  > div
+  > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
+  > div
+  > div
+  > div
+  > div
+  > div {
+  max-width: 50%;
 }
