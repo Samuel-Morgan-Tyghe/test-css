@@ -14,64 +14,170 @@ body {
 > div {
   max-width: 50%; }
 
-/* custom */
-.forge-flow {
-  background: black;
-  /* end of custom */ }
-  .forge-flow #page-title,
-  .forge-flow #header-title,
-  .forge-flow .markdown,
-  .forge-flow label > span {
-    color: var(--Text-Primary, #fff); }
-  .forge-flow label > span {
-    font-feature-settings: "clig" off, "liga" off;
-    /* Body/Small/Medium */
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 150%;
-    /* 18px */ }
-  .forge-flow button {
-    background: white;
-    padding: 12px 20px;
-    font-feature-settings: "clig" off, "liga" off;
-    border-radius: var(--ContainerCorner, 4px);
-    background: var(--Button-Primary-Background-Default, #fff);
-    font-family: Inter;
-    font-size: 14px;
-    font-weight: 600 !important;
-    line-height: 21px; }
-    .forge-flow button :active {
-      background: var(--Button-Primary-Background-Active, #f0f0f0); }
-  .forge-flow .ant-input,
-  .forge-flow .ant-select-selection-search > input,
-  .forge-flow .ant-select > input {
-    background: var(--Background-Secondary, #151a1f);
-    border-radius: var(--ContainerCorner, 4px);
-    color: var(--Text-Primary, #fff);
-    border-color: var(--Background-Secondary, #151a1f);
-    display: flex;
-    height: 48px;
-    padding: 14px 8px;
-    align-items: center;
-    gap: 8px;
-    align-self: stretch;
-    background: var(--Background-Secondary, #151a1f);
-    border-width: 1px !important; }
-    .forge-flow .ant-input:focus, .forge-flow .ant-input:active, .forge-flow .ant-input:hover,
-    .forge-flow .ant-select-selection-search > input:focus,
-    .forge-flow .ant-select-selection-search > input:active,
-    .forge-flow .ant-select-selection-search > input:hover,
-    .forge-flow .ant-select > input:focus,
-    .forge-flow .ant-select > input:active,
-    .forge-flow .ant-select > input:hover {
-      border-color: var(--Text-Interactive, #62c9d0);
+#root > div > div > div > div {
+  /* Full opacity background color */
+  background-color: white;
+  /* White with full opacity */
+  /* Background blur */
+  backdrop-filter: blur(10px);
+  /* Additional styles to ensure the div is noticeable */
+  padding: 20px;
+  border: 1px solid #ccc;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+
+#root {
+  /* custom */ }
+  #root .react-swipeable-view-container > div {
+    max-height: 100vh;
+    padding-bottom: 18px;
+    overflow: unset; }
+  #root div > .basic-layout > div > div:last-child() {
+    max-height: 100vh;
+    padding-bottom: 18px; }
+  #root .forge-flow {
+    background: black;
+    /* end of custom */ }
+    #root .forge-flow .ant-form-item-label {
+      margin-bottom: 8px; }
+    #root .forge-flow #page-title,
+    #root .forge-flow #header-title,
+    #root .forge-flow .markdown,
+    #root .forge-flow label > span {
+      color: var(--Text-Primary, #fff); }
+    #root .forge-flow label > span {
+      font-feature-settings: "clig" off, "liga" off;
+      /* Body/Small/Medium */
+      font-family: Inter;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 500; }
+    #root .forge-flow .optional {
+      padding-right: 3px; }
+    #root .forge-flow .ant-select-item-option-content {
       background: var(--Background-Secondary, #151a1f);
       border-radius: var(--ContainerCorner, 4px);
       color: var(--Text-Primary, #fff);
       border-color: var(--Background-Secondary, #151a1f); }
-    .forge-flow .ant-input:placeholder,
-    .forge-flow .ant-select-selection-search > input:placeholder,
-    .forge-flow .ant-select > input:placeholder {
-      color: var(--Text-Disabled, #585f67); }
+      #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent,
+      #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content {
+        /* display: flex; */
+        /* height: 48px; */
+        padding: 14px 8px;
+        /* align-items: center; */
+        /* gap: 8px; */
+        align-self: stretch;
+        background: var(--Background-Secondary, #151a1f);
+        border-width: 1px !important; }
+        #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent input,
+        #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content input {
+          color: var(--Text-Primary, #fff); }
+        #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:focus, #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:active, #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:hover,
+        #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:focus,
+        #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:active,
+        #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:hover {
+          border-color: var(--Text-Interactive, #62c9d0);
+          background: var(--Background-Secondary, #151a1f);
+          border-radius: var(--ContainerCorner, 4px);
+          color: var(--Text-Primary, #fff);
+          border-color: var(--Background-Secondary, #151a1f); }
+          #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:focus span, #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:active span, #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:hover span,
+          #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:focus span,
+          #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:active span,
+          #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:hover span {
+            color: var(--Text-Primary, #fff); }
+        #root .forge-flow .ant-select-item-option-content .dropdown-option-value-parent:placeholder,
+        #root .forge-flow .ant-select-item-option-content .ant-select-item-option-content:placeholder {
+          color: var(--Text-Disabled, #585f67); }
+    #root .forge-flow .ant-select .ant-select-selector,
+    #root .forge-flow .ant-select .ant-select-item-option-content {
+      background: var(--Background-Secondary, #151a1f);
+      border-radius: var(--ContainerCorner, 4px);
+      color: var(--Text-Primary, #fff);
+      border-color: var(--Background-Secondary, #151a1f);
+      /* display: flex; */
+      /* height: 48px; */
+      padding: 14px 8px;
+      /* align-items: center; */
+      /* gap: 8px; */
+      align-self: stretch;
+      background: var(--Background-Secondary, #151a1f);
+      border-width: 1px !important; }
+      #root .forge-flow .ant-select .ant-select-selector input,
+      #root .forge-flow .ant-select .ant-select-item-option-content input {
+        color: var(--Text-Primary, #fff); }
+      #root .forge-flow .ant-select .ant-select-selector:focus, #root .forge-flow .ant-select .ant-select-selector:active, #root .forge-flow .ant-select .ant-select-selector:hover,
+      #root .forge-flow .ant-select .ant-select-item-option-content:focus,
+      #root .forge-flow .ant-select .ant-select-item-option-content:active,
+      #root .forge-flow .ant-select .ant-select-item-option-content:hover {
+        border-color: var(--Text-Interactive, #62c9d0);
+        background: var(--Background-Secondary, #151a1f);
+        border-radius: var(--ContainerCorner, 4px);
+        color: var(--Text-Primary, #fff);
+        border-color: var(--Background-Secondary, #151a1f); }
+      #root .forge-flow .ant-select .ant-select-selector:placeholder,
+      #root .forge-flow .ant-select .ant-select-item-option-content:placeholder {
+        color: var(--Text-Disabled, #585f67); }
+    #root .forge-flow button,
+    #root .forge-flow .ant-button {
+      user-select: none !important;
+      background: white;
+      padding: 12px 20px;
+      font-feature-settings: "clig" off, "liga" off;
+      border-radius: var(--ContainerCorner, 4px);
+      background: var(--Button-Primary-Background-Default, #fff);
+      font-family: Inter;
+      font-size: 14px;
+      font-weight: 600 !important;
+      color: var(--Button-Primary-Foreground-Default, #0d1116);
+      border-width: 2px;
+      span-user-select: none !important; }
+      #root .forge-flow button:active, #root .forge-flow button:focus, #root .forge-flow button:visited,
+      #root .forge-flow .ant-button:active,
+      #root .forge-flow .ant-button:focus,
+      #root .forge-flow .ant-button:visited {
+        background: var(--Button-Primary-Background-Active, #c6cbce);
+        span-background: inherit; }
+      #root .forge-flow button:disabled,
+      #root .forge-flow .ant-button:disabled {
+        background: #c6cbce;
+        span-background: #c6cbce; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-checkbox-wrapper {
+      background: var(--Background-Secondary, #151a1f);
+      border-radius: var(--ContainerCorner, 4px);
+      color: var(--Text-Primary, #fff);
+      border-color: var(--Background-Secondary, #151a1f);
+      display: flex;
+      padding: 14px 8px;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+      background: var(--Background-Secondary, #151a1f);
+      border-width: 1px !important;
+      margin-top: 8px;
+      margin-bottom: 8px; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-input,
+    #root .forge-flow .ant-form-item .ant-form-item-control input {
+      background: var(--Background-Secondary, #151a1f);
+      border-radius: var(--ContainerCorner, 4px);
+      color: var(--Text-Primary, #fff);
+      border-color: var(--Background-Secondary, #151a1f);
+      display: flex;
+      height: 48px;
+      padding: 14px 8px;
+      align-items: center;
+      gap: 8px;
+      align-self: stretch;
+      background: var(--Background-Secondary, #151a1f);
+      border-width: 1px !important; }
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:focus, #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:active, #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:hover,
+      #root .forge-flow .ant-form-item .ant-form-item-control input:focus,
+      #root .forge-flow .ant-form-item .ant-form-item-control input:active,
+      #root .forge-flow .ant-form-item .ant-form-item-control input:hover {
+        border-color: var(--Text-Interactive, #62c9d0);
+        background: var(--Background-Secondary, #151a1f);
+        border-radius: var(--ContainerCorner, 4px);
+        color: var(--Text-Primary, #fff);
+        border-color: var(--Background-Secondary, #151a1f); }
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:placeholder,
+      #root .forge-flow .ant-form-item .ant-form-item-control input:placeholder {
+        color: var(--Text-Disabled, #585f67); }
