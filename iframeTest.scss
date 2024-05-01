@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
 
+$half-viewport-width: 50vw;
+
 body {
   font-family: "Inter", sans-serif;
 }
 
 #root>div>div>div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz>div>div>div>div>div {
-  max-width: 50%;
+  max-width: $half-viewport-width;
 }
 
 #root {
@@ -18,6 +20,7 @@ body {
     }
   }
 
+  // NavigationBar
   .forge-flow>div {
     &:first-child {
       overflow: unset;
@@ -33,17 +36,35 @@ body {
       background-color: rgba(13, 17, 22, 0.5);
       z-index: 99;
 
+      &>div {
+        max-width: $half-viewport-width;
+      }
+
       button {
         background-color: transparent;
 
-        .button-circle {
-          background-color: transparent;
 
+        .button-circle {
+          background-color: #FFFFFF;
+          width: 40px;
+          height: 40px;
+
+          svg {
+            path {
+              fill: #151A1F;
+            }
+          }
         }
 
         &:disabled {
           .button-circle {
-            background-color: transparent;
+            background-color: #151A1F !important;
+
+            svg {
+              path {
+                fill: #FFFFFF;
+              }
+            }
 
           }
         }
@@ -80,84 +101,94 @@ body {
       padding-right: 3px;
     }
 
-    .ant-select-item-option-content {
-      background: var(--Background-Secondary, #151a1f);
-      border-radius: var(--ContainerCorner, 4px);
-      color: var(--Text-Primary, #fff);
-      border-color: var(--Background-Secondary, #151a1f);
+    // .ant-select-item {
+    //   padding: 0;
+    // }
 
-      .dropdown-option-value-parent,
-      .ant-select-item-option-content {
-        /* display: flex; */
-        /* height: 48px; */
-        padding: 14px 8px;
-        /* align-items: center; */
-        /* gap: 8px; */
-        align-self: stretch;
-        background: var(--Background-Secondary, #151a1f);
-        border-width: 1px !important;
+    // .dropdown-option-value-parent {
+    //   span {
+    //     color: white
+    //   }
+    // }
 
-        input {
-          color: var(--Text-Primary, #fff);
-        }
+    // .ant-select-item-option-content {
+    //   background: var(--Background-Secondary, #151a1f);
+    //   border-radius: var(--ContainerCorner, 4px);
+    //   color: var(--Text-Primary, #fff);
+    //   border-color: var(--Background-Secondary, #151a1f);
 
-        &:focus,
-        &:active,
-        &:hover {
-          border-color: var(--Text-Interactive, #62c9d0);
-          background: var(--Background-Secondary, #151a1f);
-          border-radius: var(--ContainerCorner, 4px);
-          color: var(--Text-Primary, #fff);
-          border-color: var(--Background-Secondary, #151a1f);
+    //   .dropdown-option-value-parent,
+    //   .ant-select-item-option-content {
+    //     /* display: flex; */
+    //     /* height: 48px; */
+    //     padding: 14px 8px;
+    //     /* align-items: center; */
+    //     /* gap: 8px; */
+    //     align-self: stretch;
+    //     background: var(--Background-Secondary, #151a1f);
+    //     border-width: 1px !important;
 
-          span {
-            color: var(--Text-Primary, #fff);
-          }
-        }
+    //     input {
+    //       color: var(--Text-Primary, #fff);
+    //     }
 
-        &:placeholder {
-          color: var(--Text-Disabled, #585f67);
-        }
-      }
-    }
+    //     &:focus,
+    //     &:active,
+    //     &:hover {
+    //       border-color: var(--Text-Interactive, #62c9d0);
+    //       background: var(--Background-Secondary, #151a1f);
+    //       border-radius: var(--ContainerCorner, 4px);
+    //       color: var(--Text-Primary, #fff);
+    //       border-color: var(--Background-Secondary, #151a1f);
 
-    .ant-select {
+    //       span {
+    //         color: var(--Text-Primary, #fff);
+    //       }
+    //     }
 
-      .ant-select-selector,
-      .ant-select-item-option-content {
-        background: var(--Background-Secondary, #151a1f);
-        border-radius: var(--ContainerCorner, 4px);
-        color: var(--Text-Primary, #fff);
-        border-color: var(--Background-Secondary, #151a1f);
+    //     &:placeholder {
+    //       color: var(--Text-Disabled, #585f67);
+    //     }
+    //   }
+    // }
 
-        /* display: flex; */
-        /* height: 48px; */
-        padding: 14px 8px;
-        /* align-items: center; */
-        /* gap: 8px; */
-        align-self: stretch;
-        background: var(--Background-Secondary, #151a1f);
-        border-width: 1px !important;
+    // .ant-select {
 
-        input {
-          color: var(--Text-Primary, #fff);
-        }
+    //   .ant-select-selector,
+    //   .ant-select-item-option-content {
+    //     background: var(--Background-Secondary, #151a1f);
+    //     border-radius: var(--ContainerCorner, 4px);
+    //     color: var(--Text-Primary, #fff);
+    //     border-color: var(--Background-Secondary, #151a1f);
 
-        &:focus,
-        &:active,
-        &:hover {
-          border-color: var(--Text-Interactive, #62c9d0);
-          background: var(--Background-Secondary, #151a1f);
-          border-radius: var(--ContainerCorner, 4px);
-          color: var(--Text-Primary, #fff);
-          border-color: var(--Background-Secondary, #151a1f);
-        }
+    //     /* display: flex; */
+    //     /* height: 48px; */
+    //     padding: 14px 8px;
+    //     /* align-items: center; */
+    //     /* gap: 8px; */
+    //     align-self: stretch;
+    //     background: var(--Background-Secondary, #151a1f);
+    //     border-width: 1px !important;
 
-        &:placeholder {
-          color: var(--Text-Disabled, #585f67);
-        }
-      }
-    }
+    //     input {
+    //       color: var(--Text-Primary, #fff);
+    //     }
+
+    //     &:focus,
+    //     &:active,
+    //     &:hover {
+    //       border-color: var(--Text-Interactive, #62c9d0);
+    //       background: var(--Background-Secondary, #151a1f);
+    //       border-radius: var(--ContainerCorner, 4px);
+    //       color: var(--Text-Primary, #fff);
+    //       border-color: var(--Background-Secondary, #151a1f);
+    //     }
+
+    //     &:placeholder {
+    //       color: var(--Text-Disabled, #585f67);
+    //     }
+    //   }
+    // }
 
     button,
     .ant-button {
@@ -216,8 +247,7 @@ body {
           margin-bottom: 8px;
         }
 
-        .ant-input,
-        input {
+        .ant-input {
           background: var(--Background-Secondary, #151a1f);
           border-radius: var(--ContainerCorner, 4px);
           color: var(--Text-Primary, #fff);
