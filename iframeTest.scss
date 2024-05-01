@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+#root
+  > div
+  > div
+  > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
+  > div
+  > div
+  > div
+  > div
+  > div {
+  max-width: 50%;
+}
+/* custom */
+.forge-flow {
+  background: black;
+
+  #page-title,
+  #header-title,
+  .markdown,
+  label > span {
+    color: var(--Text-Primary, #fff);
+  }
+
+  label > span {
+    font-feature-settings: "clig" off, "liga" off;
+
+    /* Body/Small/Medium */
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 18px */
+  }
+
+  /* end of custom */
+  button {
+    background: white;
+    padding: 12px 20px;
+    font-feature-settings: "clig" off, "liga" off;
+    border-radius: var(--ContainerCorner, 4px);
+    background: var(--Button-Primary-Background-Default, #fff);
+    //styleName: Body/Base/Semibold;
+    font-family: Inter;
+    font-size: 14px;
+    font-weight: 600 !important;
+    line-height: 21px;
+
+    :active {
+      background: var(--Button-Primary-Background-Active, #f0f0f0);
+    }
+  }
+
+  .ant-input,
+  .ant-select-selection-search > input,
+  .ant-select > input {
+    background: var(--Background-Secondary, #151a1f);
+    border-radius: var(--ContainerCorner, 4px);
+    color: var(--Text-Primary, #fff);
+    border-color: var(--Background-Secondary, #151a1f);
+
+    display: flex;
+    height: 48px;
+    padding: 14px 8px;
+    align-items: center;
+    gap: 8px;
+    align-self: stretch;
+    background: var(--Background-Secondary, #151a1f);
+    border-width: 1px !important;
+
+    &:focus,
+    &:active,
+    &:hover {
+      border-color: var(--Text-Interactive, #62c9d0);
+      background: var(--Background-Secondary, #151a1f);
+      border-radius: var(--ContainerCorner, 4px);
+      color: var(--Text-Primary, #fff);
+      border-color: var(--Background-Secondary, #151a1f);
+    }
+    &:placeholder {
+      color: var(--Text-Disabled, #585f67);
+    }
+  }
+}
