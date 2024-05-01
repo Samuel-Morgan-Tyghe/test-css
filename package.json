@@ -1,0 +1,15 @@
+{
+  "name": "test-css",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "scss": "node-sass --watch iframeTest.scss iframeTest.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "node-sass": "^9.0.0"
+  }
+}
