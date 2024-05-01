@@ -3,27 +3,8 @@
 body {
   font-family: "Inter", sans-serif; }
 
-#root
-> div
-> div
-> div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
-> div
-> div
-> div
-> div
-> div {
+#root > div > div > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz > div > div > div > div > div {
   max-width: 50%; }
-
-#root > div > div > div > div {
-  /* Full opacity background color */
-  background-color: white;
-  /* White with full opacity */
-  /* Background blur */
-  backdrop-filter: blur(10px);
-  /* Additional styles to ensure the div is noticeable */
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
 
 #root {
   /* custom */ }
@@ -31,12 +12,23 @@ body {
     max-height: 100vh;
     padding-bottom: 18px;
     overflow: unset; }
-  #root div > .basic-layout > div > div:last-child() {
+  #root .forge-flow > div:first-child {
+    overflow: unset; }
+  #root .forge-flow > div:last-child {
     max-height: 100vh;
-    padding-bottom: 18px; }
+    padding-bottom: 18px;
+    position: absolute;
+    bottom: 0;
+    width: 100vw;
+    backdrop-filter: blur(2px);
+    background-color: rgba(13, 17, 22, 0.5);
+    z-index: 99; }
+    #root .forge-flow > div:last-child button {
+      background-color: transparent; }
+      #root .forge-flow > div:last-child button:disabled .button-circle {
+        background-color: transparent; }
   #root .forge-flow {
-    background: black;
-    /* end of custom */ }
+    background: black; }
     #root .forge-flow .ant-form-item-label {
       margin-bottom: 8px; }
     #root .forge-flow #page-title,

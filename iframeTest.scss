@@ -5,43 +5,47 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-#root
-  > div
-  > div
-  > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
-  > div
-  > div
-  > div
-  > div
-  > div {
+#root>div>div>div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz>div>div>div>div>div {
   max-width: 50%;
-}
-
-#root > div > div > div > div {
-  /* Full opacity background color */
-  background-color: rgba(255, 255, 255, 1); /* White with full opacity */
-
-  /* Background blur */
-  backdrop-filter: blur(10px);
-
-  /* Additional styles to ensure the div is noticeable */
-  padding: 20px;
-  border: 1px solid #ccc;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 #root {
   .react-swipeable-view-container {
-    & > div {
+    &>div {
       max-height: 100vh;
       padding-bottom: 18px;
       overflow: unset;
     }
   }
-  div > .basic-layout > div > div:last-child() {
-    max-height: 100vh;
-    padding-bottom: 18px;
+
+  .forge-flow>div {
+    &:first-child {
+      overflow: unset;
+    }
+
+    &:last-child {
+      max-height: 100vh;
+      padding-bottom: 18px;
+      position: absolute;
+      bottom: 0;
+      width: 100vw;
+      backdrop-filter: blur(2px);
+      background-color: rgba(13, 17, 22, 0.5);
+      z-index: 99;
+
+      button {
+        background-color: transparent;
+
+        &:disabled {
+          .button-circle {
+            background-color: transparent;
+
+          }
+        }
+      }
+    }
   }
+
   /* custom */
   .forge-flow {
     background: black;
@@ -53,11 +57,11 @@ body {
     #page-title,
     #header-title,
     .markdown,
-    label > span {
+    label>span {
       color: var(--Text-Primary, #fff);
     }
 
-    label > span {
+    label>span {
       font-feature-settings: "clig" off, "liga" off;
 
       /* Body/Small/Medium */
@@ -76,6 +80,7 @@ body {
       border-radius: var(--ContainerCorner, 4px);
       color: var(--Text-Primary, #fff);
       border-color: var(--Background-Secondary, #151a1f);
+
       .dropdown-option-value-parent,
       .ant-select-item-option-content {
         /* display: flex; */
@@ -99,10 +104,12 @@ body {
           border-radius: var(--ContainerCorner, 4px);
           color: var(--Text-Primary, #fff);
           border-color: var(--Background-Secondary, #151a1f);
+
           span {
             color: var(--Text-Primary, #fff);
           }
         }
+
         &:placeholder {
           color: var(--Text-Disabled, #585f67);
         }
@@ -110,6 +117,7 @@ body {
     }
 
     .ant-select {
+
       .ant-select-selector,
       .ant-select-item-option-content {
         background: var(--Background-Secondary, #151a1f);
@@ -139,13 +147,12 @@ body {
           color: var(--Text-Primary, #fff);
           border-color: var(--Background-Secondary, #151a1f);
         }
+
         &:placeholder {
           color: var(--Text-Disabled, #585f67);
         }
       }
     }
-
-    /* end of custom */
 
     button,
     .ant-button {
@@ -166,12 +173,15 @@ body {
       &:focus,
       &:visited {
         background: var(--Button-Primary-Background-Active, #c6cbce);
+
         span: {
           background: inherit;
         }
       }
+
       &:disabled {
         background: rgba(198, 203, 206, 1);
+
         span: {
           background: rgba(198, 203, 206, 1);
         }
@@ -226,6 +236,7 @@ body {
             color: var(--Text-Primary, #fff);
             border-color: var(--Background-Secondary, #151a1f);
           }
+
           &:placeholder {
             color: var(--Text-Disabled, #585f67);
           }

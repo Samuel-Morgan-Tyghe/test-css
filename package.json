@@ -3,13 +3,17 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "scss": "node-sass --watch iframeTest.scss iframeTest.css"
+    "scss": "node-sass --watch iframeTest.scss iframeTest.css",
+    "lint": "stylelint '**/*.scss'"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "devDependencies": {
-    "node-sass": "^9.0.0"
+    "node-sass": "^9.0.0",
+    "stylelint": "^16.4.0",
+    "stylelint-config-standard-scss": "^13.1.0",
+    "stylelint-scss": "^6.2.1"
   }
 }
