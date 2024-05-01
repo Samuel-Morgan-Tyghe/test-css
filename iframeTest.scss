@@ -208,7 +208,7 @@ body {
       &:active,
       &:focus,
       &:visited {
-        background: var(--Button-Primary-Background-Active, #c6cbce);
+        background: rgba(198, 203, 206, 1);
 
         span: {
           background: inherit;
@@ -222,6 +222,17 @@ body {
           background: rgba(198, 203, 206, 1);
         }
       }
+
+      &.ant-btn-solid-black {
+        background: var(--Button-Primary-Background-Active, #0d1116);
+        color: var(--Button-Primary-Foreground-Active, #fff);
+      }
+
+      &.ant-btn-solid-light {
+        background: var(--Button-Primary-Background-Active, #fff);
+        color: var(--Button-Primary-Foreground-Active, #0d1116);
+      }
+
 
       span: {
         user-select: none !important;

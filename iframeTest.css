@@ -73,12 +73,20 @@ body {
       #root .forge-flow .ant-button:active,
       #root .forge-flow .ant-button:focus,
       #root .forge-flow .ant-button:visited {
-        background: var(--Button-Primary-Background-Active, #c6cbce);
+        background: #c6cbce;
         span-background: inherit; }
       #root .forge-flow button:disabled,
       #root .forge-flow .ant-button:disabled {
         background: #c6cbce;
         span-background: #c6cbce; }
+      #root .forge-flow button.ant-btn-solid-black,
+      #root .forge-flow .ant-button.ant-btn-solid-black {
+        background: var(--Button-Primary-Background-Active, #0d1116);
+        color: var(--Button-Primary-Foreground-Active, #fff); }
+      #root .forge-flow button.ant-btn-solid-light,
+      #root .forge-flow .ant-button.ant-btn-solid-light {
+        background: var(--Button-Primary-Background-Active, #fff);
+        color: var(--Button-Primary-Foreground-Active, #0d1116); }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-checkbox-wrapper {
       background: var(--Background-Secondary, #151a1f);
       border-radius: var(--ContainerCorner, 4px);
