@@ -3,7 +3,15 @@
 body {
   font-family: "Inter", sans-serif; }
 
-#root > div > div > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz > div > div > div > div > div {
+#root
+> div
+> div
+> div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
+> div
+> div
+> div
+> div
+> div {
   max-width: 50vw; }
 
 #root {
@@ -28,15 +36,15 @@ body {
     #root .forge-flow > div:last-child button {
       background-color: transparent; }
       #root .forge-flow > div:last-child button .button-circle {
-        background-color: #FFFFFF;
+        background-color: #ffffff;
         width: 40px;
         height: 40px; }
         #root .forge-flow > div:last-child button .button-circle svg path {
-          fill: #151A1F; }
+          fill: #151a1f; }
       #root .forge-flow > div:last-child button:disabled .button-circle {
-        background-color: #151A1F !important; }
+        background-color: #151a1f !important; }
         #root .forge-flow > div:last-child button:disabled .button-circle svg path {
-          fill: #FFFFFF; }
+          fill: #ffffff; }
   #root .forge-flow {
     background: black; }
     #root .forge-flow .ant-form-item-label {
@@ -55,7 +63,6 @@ body {
       font-weight: 500; }
     #root .forge-flow .optional {
       padding-right: 3px; }
-    #root .forge-flow button,
     #root .forge-flow .ant-button {
       user-select: none !important;
       background: white;
@@ -67,26 +74,21 @@ body {
       font-size: 14px;
       font-weight: 600 !important;
       color: var(--Button-Primary-Foreground-Default, #0d1116);
-      border-width: 2px;
-      span-user-select: none !important; }
-      #root .forge-flow button:active, #root .forge-flow button:focus, #root .forge-flow button:visited,
-      #root .forge-flow .ant-button:active,
-      #root .forge-flow .ant-button:focus,
-      #root .forge-flow .ant-button:visited {
+      border-width: 2px; }
+      #root .forge-flow .ant-button:active, #root .forge-flow .ant-button:focus, #root .forge-flow .ant-button:visited {
         background: #c6cbce;
         span-background: inherit; }
-      #root .forge-flow button:disabled,
       #root .forge-flow .ant-button:disabled {
         background: #c6cbce;
         span-background: #c6cbce; }
-      #root .forge-flow button.ant-btn-solid-black,
       #root .forge-flow .ant-button.ant-btn-solid-black {
         background: var(--Button-Primary-Background-Active, #0d1116);
         color: var(--Button-Primary-Foreground-Active, #fff); }
-      #root .forge-flow button.ant-btn-solid-light,
       #root .forge-flow .ant-button.ant-btn-solid-light {
         background: var(--Button-Primary-Background-Active, #fff);
         color: var(--Button-Primary-Foreground-Active, #0d1116); }
+      #root .forge-flow .ant-button > span {
+        user-select: none !important; }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-checkbox-wrapper {
       background: var(--Background-Secondary, #151a1f);
       border-radius: var(--ContainerCorner, 4px);
@@ -122,3 +124,10 @@ body {
         border-color: var(--Background-Secondary, #151a1f); }
       #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:placeholder {
         color: var(--Text-Disabled, #585f67); }
+  #root #saveAndContinueButton {
+    background: transparent;
+    color: var(--Text-Interactive, #62c9d0); }
+    #root #saveAndContinueButton > svg {
+      color: var(--Text-Interactive, #62c9d0); }
+      #root #saveAndContinueButton > svg > path {
+        fill: var(--Text-Interactive, #62c9d0); }

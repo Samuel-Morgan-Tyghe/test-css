@@ -7,13 +7,21 @@ body {
   font-family: "Inter", sans-serif;
 }
 
-#root>div>div>div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz>div>div>div>div>div {
+#root
+  > div
+  > div
+  > div.sc-dcJsrY.sc-ivgJuh.htbJWY.kAlPsz
+  > div
+  > div
+  > div
+  > div
+  > div {
   max-width: $half-viewport-width;
 }
 
 #root {
   .react-swipeable-view-container {
-    &>div {
+    & > div {
       max-height: 100vh;
       padding-bottom: 18px;
       overflow: unset;
@@ -21,7 +29,7 @@ body {
   }
 
   // NavigationBar
-  .forge-flow>div {
+  .forge-flow > div {
     &:first-child {
       overflow: unset;
     }
@@ -36,36 +44,34 @@ body {
       background-color: rgba(13, 17, 22, 0.5);
       z-index: 99;
 
-      &>div {
+      & > div {
         max-width: $half-viewport-width;
       }
 
       button {
         background-color: transparent;
 
-
         .button-circle {
-          background-color: #FFFFFF;
+          background-color: #ffffff;
           width: 40px;
           height: 40px;
 
           svg {
             path {
-              fill: #151A1F;
+              fill: #151a1f;
             }
           }
         }
 
         &:disabled {
           .button-circle {
-            background-color: #151A1F !important;
+            background-color: #151a1f !important;
 
             svg {
               path {
-                fill: #FFFFFF;
+                fill: #ffffff;
               }
             }
-
           }
         }
       }
@@ -83,11 +89,11 @@ body {
     #page-title,
     #header-title,
     .markdown,
-    label>span {
+    label > span {
       color: var(--Text-Primary, #fff);
     }
 
-    label>span {
+    label > span {
       font-feature-settings: "clig" off, "liga" off;
 
       /* Body/Small/Medium */
@@ -190,7 +196,6 @@ body {
     //   }
     // }
 
-    button,
     .ant-button {
       user-select: none !important;
       background: white;
@@ -233,8 +238,7 @@ body {
         color: var(--Button-Primary-Foreground-Active, #0d1116);
       }
 
-
-      span: {
+      & > span {
         user-select: none !important;
       }
     }
@@ -287,6 +291,18 @@ body {
             color: var(--Text-Disabled, #585f67);
           }
         }
+      }
+    }
+  }
+  #saveAndContinueButton {
+    background: transparent;
+    color: var(--Text-Interactive, #62c9d0);
+
+    & > svg {
+      color: var(--Text-Interactive, #62c9d0);
+
+      & > path {
+        fill: var(--Text-Interactive, #62c9d0);
       }
     }
   }
