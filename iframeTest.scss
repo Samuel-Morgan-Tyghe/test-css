@@ -196,7 +196,8 @@ body {
     //   }
     // }
 
-    .ant-button {
+    button,
+    .ant-btn {
       user-select: none !important;
       background: white;
       padding: 12px 20px;
@@ -294,6 +295,7 @@ body {
       }
     }
   }
+
   #saveAndContinueButton {
     background: transparent;
     color: var(--Text-Interactive, #62c9d0);

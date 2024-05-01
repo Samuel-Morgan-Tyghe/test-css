@@ -63,7 +63,8 @@ body {
       font-weight: 500; }
     #root .forge-flow .optional {
       padding-right: 3px; }
-    #root .forge-flow .ant-button {
+    #root .forge-flow button,
+    #root .forge-flow .ant-btn {
       user-select: none !important;
       background: white;
       padding: 12px 20px;
@@ -75,19 +76,26 @@ body {
       font-weight: 600 !important;
       color: var(--Button-Primary-Foreground-Default, #0d1116);
       border-width: 2px; }
-      #root .forge-flow .ant-button:active, #root .forge-flow .ant-button:focus, #root .forge-flow .ant-button:visited {
+      #root .forge-flow button:active, #root .forge-flow button:focus, #root .forge-flow button:visited,
+      #root .forge-flow .ant-btn:active,
+      #root .forge-flow .ant-btn:focus,
+      #root .forge-flow .ant-btn:visited {
         background: #c6cbce;
         span-background: inherit; }
-      #root .forge-flow .ant-button:disabled {
+      #root .forge-flow button:disabled,
+      #root .forge-flow .ant-btn:disabled {
         background: #c6cbce;
         span-background: #c6cbce; }
-      #root .forge-flow .ant-button.ant-btn-solid-black {
+      #root .forge-flow button.ant-btn-solid-black,
+      #root .forge-flow .ant-btn.ant-btn-solid-black {
         background: var(--Button-Primary-Background-Active, #0d1116);
         color: var(--Button-Primary-Foreground-Active, #fff); }
-      #root .forge-flow .ant-button.ant-btn-solid-light {
+      #root .forge-flow button.ant-btn-solid-light,
+      #root .forge-flow .ant-btn.ant-btn-solid-light {
         background: var(--Button-Primary-Background-Active, #fff);
         color: var(--Button-Primary-Foreground-Active, #0d1116); }
-      #root .forge-flow .ant-button > span {
+      #root .forge-flow button > span,
+      #root .forge-flow .ant-btn > span {
         user-select: none !important; }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-checkbox-wrapper {
       background: var(--Background-Secondary, #151a1f);
