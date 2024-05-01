@@ -25,6 +25,8 @@ body {
     z-index: 99; }
     #root .forge-flow > div:last-child button {
       background-color: transparent; }
+      #root .forge-flow > div:last-child button .button-circle {
+        background-color: transparent; }
       #root .forge-flow > div:last-child button:disabled .button-circle {
         background-color: transparent; }
   #root .forge-flow {

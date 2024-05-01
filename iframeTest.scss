@@ -36,6 +36,11 @@ body {
       button {
         background-color: transparent;
 
+        .button-circle {
+          background-color: transparent;
+
+        }
+
         &:disabled {
           .button-circle {
             background-color: transparent;
