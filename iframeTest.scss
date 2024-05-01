@@ -294,17 +294,16 @@ body {
         }
       }
     }
-  }
-
-  #saveAndContinueButton {
-    background: transparent;
-    color: var(--Text-Interactive, #62c9d0);
-
-    & > svg {
+    #saveAndContinueButton {
+      background: transparent;
       color: var(--Text-Interactive, #62c9d0);
 
-      & > path {
-        fill: var(--Text-Interactive, #62c9d0);
+      & > svg {
+        color: var(--Text-Interactive, #62c9d0);
+
+        & > path {
+          fill: var(--Text-Interactive, #62c9d0);
+        }
       }
     }
   }

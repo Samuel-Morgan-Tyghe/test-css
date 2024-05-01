@@ -132,10 +132,10 @@ body {
         border-color: var(--Background-Secondary, #151a1f); }
       #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:placeholder {
         color: var(--Text-Disabled, #585f67); }
-  #root #saveAndContinueButton {
-    background: transparent;
-    color: var(--Text-Interactive, #62c9d0); }
-    #root #saveAndContinueButton > svg {
+    #root .forge-flow #saveAndContinueButton {
+      background: transparent;
       color: var(--Text-Interactive, #62c9d0); }
-      #root #saveAndContinueButton > svg > path {
-        fill: var(--Text-Interactive, #62c9d0); }
+      #root .forge-flow #saveAndContinueButton > svg {
+        color: var(--Text-Interactive, #62c9d0); }
+        #root .forge-flow #saveAndContinueButton > svg > path {
+          fill: var(--Text-Interactive, #62c9d0); }
