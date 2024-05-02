@@ -68,8 +68,14 @@ body {
         background-color: #151a1f !important; }
         #root .forge-flow > div:last-child button:disabled .button-circle svg path {
           fill: #ffffff; }
+  #root .workflow-message {
+    border-radius: 4px; }
+  #root div[data-cy="pageContainer"] {
+    border-radius: 4px; }
+  #root div[data-cy="styledFilePageTitle"] {
+    color: var(--Text-Disabled, #585f67); }
   #root .workflow-message-warning > .markdown {
-    color: #0d1116 !important; }
+    color: revert !important; }
   #root .forge-flow,
   #root .basic-layout {
     background: #0d1116; }

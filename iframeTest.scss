@@ -123,10 +123,20 @@ body {
       }
     }
   }
+  .workflow-message {
+    border-radius: 4px;
+  }
+
+  div[data-cy="pageContainer"] {
+    border-radius: 4px;
+  }
+  div[data-cy="styledFilePageTitle"] {
+    color: var(--Text-Disabled, #585f67);
+  }
 
   .workflow-message-warning {
     & > .markdown {
-      color: #0d1116 !important;
+      color: revert !important;
     }
   }
 
