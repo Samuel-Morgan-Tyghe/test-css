@@ -89,9 +89,14 @@ body {
     }
   }
 
-  /* custom */
-  .forge-flow {
+  /* base */
+  .forge-flow,
+  .basic-layout {
     background: #0d1116;
+
+    #finish-btn {
+      height: auto;
+    }
 
     .form-group-no-label {
       margin-top: -12px;
@@ -104,6 +109,7 @@ body {
     #page-title,
     #header-title,
     .markdown,
+    .page-description,
     label > span {
       color: var(--Text-Primary, #fff);
     }
@@ -315,6 +321,15 @@ body {
 
           &:placeholder {
             color: var(--Text-Disabled, #585f67);
+          }
+        }
+      }
+    }
+    .label-employee-address {
+      & > .ant-form-item-control {
+        & > div {
+          & > div {
+            margin-bottom: 20px;
           }
         }
       }
