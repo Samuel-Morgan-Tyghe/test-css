@@ -20,6 +20,8 @@ body {
     max-height: 100vh;
     padding-bottom: 18px;
     overflow: unset; }
+  #root .forge-page {
+    padding: 40px 20px 80px; }
   #root .forge-flow > div:first-child {
     overflow: unset; }
   #root .forge-flow > div:last-child {
@@ -33,6 +35,10 @@ body {
     z-index: 99; }
     #root .forge-flow > div:last-child > div {
       max-width: 50vw; }
+    #root .forge-flow > div:last-child a {
+      display: none; }
+    #root .forge-flow > div:last-child span {
+      color: var(--Text-Primary, #fff); }
     #root .forge-flow > div:last-child button {
       background-color: transparent; }
       #root .forge-flow > div:last-child button .button-circle {

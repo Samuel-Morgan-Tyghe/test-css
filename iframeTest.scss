@@ -28,6 +28,10 @@ body {
     }
   }
 
+  .forge-page {
+    padding: 40px 20px 80px;
+  }
+
   // NavigationBar
   .forge-flow > div {
     &:first-child {
@@ -48,6 +52,13 @@ body {
         max-width: $half-viewport-width;
       }
 
+      a {
+        display: none;
+      }
+
+      span {
+        color: var(--Text-Primary, #fff);
+      }
       button {
         background-color: transparent;
 
