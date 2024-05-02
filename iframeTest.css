@@ -32,6 +32,13 @@ body {
       color: #0d1116; }
     #root .signature-actions-list span {
       color: #0d1116 !important; }
+  #root div:has(> .signature-accept-actions) {
+    backdrop-filter: blur(2px);
+    background-color: rgba(13, 17, 22, 0.5); }
+    #root div:has(> .signature-accept-actions) div > div > a {
+      display: none; }
+  #root .signature-accept-container .signature-actions-list {
+    padding: 16px; }
   #root .forge-flow > div:first-child {
     overflow: unset; }
   #root .forge-flow > div:last-child {

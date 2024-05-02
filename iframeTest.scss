@@ -48,18 +48,19 @@ body {
     }
   }
 
+  div:has(> .signature-accept-actions) {
+    backdrop-filter: blur(2px);
+    background-color: rgba(13, 17, 22, 0.5);
+
+    div > div > a {
+      display: none;
+    }
+  }
+
   .signature-accept-container {
-    // .ant-affix {
-    //   & > div {
-    //     width: 100vw;
-    //     backdrop-filter: blur(2px);
-    //     background-color: rgba(13, 17, 22, 0.5);
-    //   }
-    // }
-    // div:has(.signature-accept-actions) {
-    //   backdrop-filter: blur(2px);
-    //   background-color: rgba(13, 17, 22, 0.5);
-    // }
+    .signature-actions-list {
+      padding: 16px;
+    }
   }
 
   // .signature-accept-container div:has(.signature-accept-actions) {
