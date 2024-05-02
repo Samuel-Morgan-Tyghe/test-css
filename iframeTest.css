@@ -176,6 +176,7 @@ body {
     #root .forge-flow .ant-btn,
     #root .basic-layout button,
     #root .basic-layout .ant-btn {
+      height: auto;
       user-select: none !important;
       background: white;
       padding: 12px 20px;
