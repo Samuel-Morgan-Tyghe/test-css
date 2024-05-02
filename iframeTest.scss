@@ -32,6 +32,22 @@ body {
   .forge-page {
     padding: 40px 20px 80px;
   }
+
+  .signature-actions-list {
+    background: white;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 4px;
+
+    & > * {
+      color: #0d1116;
+    }
+
+    span {
+      color: #0d1116 !important;
+    }
+  }
+
   .signature-accept-container {
     // .ant-affix {
     //   & > div {
@@ -104,6 +120,12 @@ body {
           }
         }
       }
+    }
+  }
+
+  .workflow-message-warning {
+    & > .markdown {
+      color: #0d1116 !important;
     }
   }
 

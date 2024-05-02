@@ -23,6 +23,15 @@ body {
     overflow: unset; }
   #root .forge-page {
     padding: 40px 20px 80px; }
+  #root .signature-actions-list {
+    background: white;
+    padding: 18px;
+    margin-bottom: 18px;
+    border-radius: 4px; }
+    #root .signature-actions-list > * {
+      color: #0d1116; }
+    #root .signature-actions-list span {
+      color: #0d1116 !important; }
   #root .forge-flow > div:first-child {
     overflow: unset; }
   #root .forge-flow > div:last-child {
@@ -52,6 +61,8 @@ body {
         background-color: #151a1f !important; }
         #root .forge-flow > div:last-child button:disabled .button-circle svg path {
           fill: #ffffff; }
+  #root .workflow-message-warning > .markdown {
+    color: #0d1116 !important; }
   #root .forge-flow,
   #root .basic-layout {
     background: #0d1116; }
