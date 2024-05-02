@@ -46,7 +46,9 @@ body {
         #root .forge-flow > div:last-child button:disabled .button-circle svg path {
           fill: #ffffff; }
   #root .forge-flow {
-    background: black; }
+    background: #0d1116; }
+    #root .forge-flow .form-group-no-label {
+      margin-top: -12px; }
     #root .forge-flow .ant-form-item-label {
       margin-bottom: 8px; }
     #root .forge-flow #page-title,
@@ -63,6 +65,66 @@ body {
       font-weight: 500; }
     #root .forge-flow .optional {
       padding-right: 3px; }
+    #root .forge-flow .ant-select .ant-select-selector {
+      height: auto; }
+    #root .forge-flow .ant-select .dropdown-option-value-parent .placeholder {
+      max-height: 0px; }
+    #root .forge-flow .ant-select .dropdown-option-value {
+      height: auto;
+      text-wrap: pretty; }
+    #root .forge-flow .ant-select .ant-select-arrow {
+      color: var(--Text-Primary, #fff); }
+      #root .forge-flow .ant-select .ant-select-arrow svg path {
+        fill: var(--Text-Primary, #fff); }
+    #root .forge-flow .ant-select-dropdown .ant-select-item-option-selected {
+      background: var(--Text-Disabled, #585f67) !important;
+      color: var(--Text-Primary, #fff) !important; }
+    #root .forge-flow .ant-select-dropdown {
+      background: var(--Background-Secondary, #151a1f);
+      color: var(--Text-Primary, #fff); }
+      #root .forge-flow .ant-select-dropdown .ant-select-item-option-content,
+      #root .forge-flow .ant-select-dropdown .dropdown-option-value {
+        color: var(--Text-Primary, #fff); }
+    #root .forge-flow .ant-select-item-option-active {
+      background: var(--Text-Disabled, #585f67) !important;
+      color: var(--Text-Primary, #fff) !important; }
+      #root .forge-flow .ant-select-item-option-active .ant-select-item-option-content,
+      #root .forge-flow .ant-select-item-option-active .dropdown-option-value {
+        color: var(--Text-Primary, #fff); }
+    #root .forge-flow .ant-select > .ant-select-selector {
+      min-height: 48px;
+      align-items: center;
+      padding: 2px 8px; }
+      #root .forge-flow .ant-select > .ant-select-selector .ant-select-selection-item {
+        line-height: normal;
+        display: flex;
+        padding: 8px 0; }
+      #root .forge-flow .ant-select > .ant-select-selector .dropdown-option-value {
+        color: white; }
+    #root .forge-flow .ant-select .ant-select-selector,
+    #root .forge-flow .ant-select .ant-select-item-option-content {
+      background: var(--Background-Secondary, #151a1f);
+      border-radius: var(--ContainerCorner, 4px);
+      color: var(--Text-Primary, #fff);
+      border-color: var(--Background-Secondary, #151a1f);
+      align-self: stretch;
+      background: var(--Background-Secondary, #151a1f);
+      border-width: 1px !important; }
+      #root .forge-flow .ant-select .ant-select-selector input,
+      #root .forge-flow .ant-select .ant-select-item-option-content input {
+        color: var(--Text-Primary, #fff); }
+      #root .forge-flow .ant-select .ant-select-selector:focus, #root .forge-flow .ant-select .ant-select-selector:active, #root .forge-flow .ant-select .ant-select-selector:hover,
+      #root .forge-flow .ant-select .ant-select-item-option-content:focus,
+      #root .forge-flow .ant-select .ant-select-item-option-content:active,
+      #root .forge-flow .ant-select .ant-select-item-option-content:hover {
+        border-color: var(--Text-Interactive, #62c9d0);
+        background: var(--Background-Secondary, #151a1f);
+        border-radius: var(--ContainerCorner, 4px);
+        color: var(--Text-Primary, #fff);
+        border-color: var(--Background-Secondary, #151a1f); }
+      #root .forge-flow .ant-select .ant-select-selector:placeholder,
+      #root .forge-flow .ant-select .ant-select-item-option-content:placeholder {
+        color: var(--Text-Disabled, #585f67); }
     #root .forge-flow button,
     #root .forge-flow .ant-btn {
       user-select: none !important;
@@ -104,6 +166,7 @@ body {
       border-color: var(--Background-Secondary, #151a1f);
       display: flex;
       padding: 14px 8px;
+      line-height: 20px;
       align-items: center;
       gap: 8px;
       align-self: stretch;
@@ -117,8 +180,10 @@ body {
       color: var(--Text-Primary, #fff);
       border-color: var(--Background-Secondary, #151a1f);
       display: flex;
-      height: 48px;
+      align-items: center;
+      min-height: 48px;
       padding: 14px 8px;
+      line-height: 20px;
       align-items: center;
       gap: 8px;
       align-self: stretch;
@@ -139,3 +204,45 @@ body {
         color: var(--Text-Interactive, #62c9d0); }
         #root .forge-flow #saveAndContinueButton > svg > path {
           fill: var(--Text-Interactive, #62c9d0); }
+
+form > div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards; }
+
+/* Keyframes for the animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px); }
+  to {
+    opacity: 1;
+    transform: translateY(0); } }
+
+/* Increasing the delay for each child */
+form > div:nth-child(1) {
+  animation-delay: 100ms; }
+
+form > div:nth-child(2) {
+  animation-delay: 200ms; }
+
+form > div:nth-child(3) {
+  animation-delay: 300ms; }
+
+form > div:nth-child(4) {
+  animation-delay: 400ms; }
+
+form > div:nth-child(5) {
+  animation-delay: 500ms; }
+
+form > div:nth-child(6) {
+  animation-delay: 600ms; }
+
+form > div:nth-child(7) {
+  animation-delay: 700ms; }
+
+form > div:nth-child(8) {
+  animation-delay: 800ms; }
+
+form > div:nth-child(9) {
+  animation-delay: 900ms; }

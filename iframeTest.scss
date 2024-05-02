@@ -80,7 +80,11 @@ body {
 
   /* custom */
   .forge-flow {
-    background: black;
+    background: #0d1116;
+
+    .form-group-no-label {
+      margin-top: -12px;
+    }
 
     .ant-form-item-label {
       margin-bottom: 8px;
@@ -107,94 +111,101 @@ body {
       padding-right: 3px;
     }
 
-    // .ant-select-item {
-    //   padding: 0;
-    // }
+    .ant-select {
+      .ant-select-selector {
+        height: auto;
+      }
 
-    // .dropdown-option-value-parent {
-    //   span {
-    //     color: white
-    //   }
-    // }
+      .dropdown-option-value-parent {
+        .placeholder {
+          max-height: 0px;
+        }
+      }
 
-    // .ant-select-item-option-content {
-    //   background: var(--Background-Secondary, #151a1f);
-    //   border-radius: var(--ContainerCorner, 4px);
-    //   color: var(--Text-Primary, #fff);
-    //   border-color: var(--Background-Secondary, #151a1f);
+      .dropdown-option-value {
+        height: auto;
+        text-wrap: pretty;
+      }
+      .ant-select-arrow {
+        color: var(--Text-Primary, #fff);
+        svg {
+          path {
+            fill: var(--Text-Primary, #fff);
+          }
+        }
+      }
+    }
+    .ant-select-dropdown .ant-select-item-option-selected {
+      background: var(--Text-Disabled, #585f67) !important;
+      color: var(--Text-Primary, #fff) !important;
+    }
 
-    //   .dropdown-option-value-parent,
-    //   .ant-select-item-option-content {
-    //     /* display: flex; */
-    //     /* height: 48px; */
-    //     padding: 14px 8px;
-    //     /* align-items: center; */
-    //     /* gap: 8px; */
-    //     align-self: stretch;
-    //     background: var(--Background-Secondary, #151a1f);
-    //     border-width: 1px !important;
+    .ant-select-dropdown {
+      background: var(--Background-Secondary, #151a1f);
+      color: var(--Text-Primary, #fff);
 
-    //     input {
-    //       color: var(--Text-Primary, #fff);
-    //     }
+      .ant-select-item-option-content,
+      .dropdown-option-value {
+        color: var(--Text-Primary, #fff);
+      }
+    }
 
-    //     &:focus,
-    //     &:active,
-    //     &:hover {
-    //       border-color: var(--Text-Interactive, #62c9d0);
-    //       background: var(--Background-Secondary, #151a1f);
-    //       border-radius: var(--ContainerCorner, 4px);
-    //       color: var(--Text-Primary, #fff);
-    //       border-color: var(--Background-Secondary, #151a1f);
+    .ant-select-item-option-active {
+      background: var(--Text-Disabled, #585f67) !important;
+      color: var(--Text-Primary, #fff) !important;
+      .ant-select-item-option-content,
+      .dropdown-option-value {
+        color: var(--Text-Primary, #fff);
+      }
+    }
 
-    //       span {
-    //         color: var(--Text-Primary, #fff);
-    //       }
-    //     }
+    .ant-select {
+      & > .ant-select-selector {
+        min-height: 48px;
+        align-items: center;
+        padding: 2px 8px;
 
-    //     &:placeholder {
-    //       color: var(--Text-Disabled, #585f67);
-    //     }
-    //   }
-    // }
+        .ant-select-selection-item {
+          line-height: normal;
+          display: flex;
+          padding: 8px 0;
+        }
 
-    // .ant-select {
+        .dropdown-option-value {
+          color: white;
+        }
+      }
 
-    //   .ant-select-selector,
-    //   .ant-select-item-option-content {
-    //     background: var(--Background-Secondary, #151a1f);
-    //     border-radius: var(--ContainerCorner, 4px);
-    //     color: var(--Text-Primary, #fff);
-    //     border-color: var(--Background-Secondary, #151a1f);
+      .ant-select-selector,
+      .ant-select-item-option-content {
+        background: var(--Background-Secondary, #151a1f);
+        border-radius: var(--ContainerCorner, 4px);
+        color: var(--Text-Primary, #fff);
+        border-color: var(--Background-Secondary, #151a1f);
 
-    //     /* display: flex; */
-    //     /* height: 48px; */
-    //     padding: 14px 8px;
-    //     /* align-items: center; */
-    //     /* gap: 8px; */
-    //     align-self: stretch;
-    //     background: var(--Background-Secondary, #151a1f);
-    //     border-width: 1px !important;
+        align-self: stretch;
+        background: var(--Background-Secondary, #151a1f);
+        border-width: 1px !important;
 
-    //     input {
-    //       color: var(--Text-Primary, #fff);
-    //     }
+        input {
+          color: var(--Text-Primary, #fff);
+        }
 
-    //     &:focus,
-    //     &:active,
-    //     &:hover {
-    //       border-color: var(--Text-Interactive, #62c9d0);
-    //       background: var(--Background-Secondary, #151a1f);
-    //       border-radius: var(--ContainerCorner, 4px);
-    //       color: var(--Text-Primary, #fff);
-    //       border-color: var(--Background-Secondary, #151a1f);
-    //     }
+        &:focus,
+        &:active,
+        &:hover {
+          border-color: var(--Text-Interactive, #62c9d0);
+          background: var(--Background-Secondary, #151a1f);
+          border-radius: var(--ContainerCorner, 4px);
+          color: var(--Text-Primary, #fff);
+          border-color: var(--Background-Secondary, #151a1f);
+        }
 
-    //     &:placeholder {
-    //       color: var(--Text-Disabled, #585f67);
-    //     }
-    //   }
-    // }
+        &:placeholder {
+          color: var(--Text-Disabled, #585f67);
+        }
+      }
+    }
 
     button,
     .ant-btn {
@@ -254,6 +265,7 @@ body {
 
           display: flex;
           padding: 14px 8px;
+          line-height: 20px;
           align-items: center;
           gap: 8px;
           align-self: stretch;
@@ -270,8 +282,10 @@ body {
           border-color: var(--Background-Secondary, #151a1f);
 
           display: flex;
-          height: 48px;
+          align-items: center;
+          min-height: 48px;
           padding: 14px 8px;
+          line-height: 20px;
           align-items: center;
           gap: 8px;
           align-self: stretch;
@@ -307,4 +321,51 @@ body {
       }
     }
   }
+}
+
+form > div {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Keyframes for the animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Increasing the delay for each child */
+form > div:nth-child(1) {
+  animation-delay: 100ms;
+}
+form > div:nth-child(2) {
+  animation-delay: 200ms;
+}
+form > div:nth-child(3) {
+  animation-delay: 300ms;
+}
+form > div:nth-child(4) {
+  animation-delay: 400ms;
+}
+form > div:nth-child(5) {
+  animation-delay: 500ms;
+}
+form > div:nth-child(6) {
+  animation-delay: 600ms;
+}
+form > div:nth-child(7) {
+  animation-delay: 700ms;
+}
+form > div:nth-child(8) {
+  animation-delay: 800ms;
+}
+form > div:nth-child(9) {
+  animation-delay: 900ms;
 }
