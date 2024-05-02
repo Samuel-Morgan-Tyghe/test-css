@@ -20,6 +20,16 @@ body {
   max-width: $half-viewport-width;
 }
 
+#page-title::after {
+  background-color: var(--Text-Interactive, #62c9d0);
+}
+
+.loading-spinner {
+  border-left: 4px solid #62c9d0;
+  width: 40px;
+  height: 40px;
+}
+
 #root {
   .react-swipeable-view-container {
     & > div {
