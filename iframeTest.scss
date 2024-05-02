@@ -294,6 +294,12 @@ body {
       color: var(--Button-Primary-Foreground-Default, #0d1116);
       border-width: 2px;
 
+      svg {
+        path {
+          fill: var(--Button-Primary-Foreground-Default, #0d1116);
+        }
+      }
+
       &:active,
       &:focus,
       &:visited {

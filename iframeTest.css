@@ -212,6 +212,11 @@ body {
       font-weight: 600 !important;
       color: var(--Button-Primary-Foreground-Default, #0d1116);
       border-width: 2px; }
+      #root .forge-flow button svg path,
+      #root .forge-flow .ant-btn svg path,
+      #root .basic-layout button svg path,
+      #root .basic-layout .ant-btn svg path {
+        fill: var(--Button-Primary-Foreground-Default, #0d1116); }
       #root .forge-flow button:active, #root .forge-flow button:focus, #root .forge-flow button:visited,
       #root .forge-flow .ant-btn:active,
       #root .forge-flow .ant-btn:focus,
