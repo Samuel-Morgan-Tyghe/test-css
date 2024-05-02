@@ -5,6 +5,7 @@ $half-viewport-width: 50vw;
 
 body {
   font-family: "Inter", sans-serif;
+  background: #0d1116;
 }
 
 #root
@@ -31,7 +32,24 @@ body {
   .forge-page {
     padding: 40px 20px 80px;
   }
+  .signature-accept-container {
+    // .ant-affix {
+    //   & > div {
+    //     width: 100vw;
+    //     backdrop-filter: blur(2px);
+    //     background-color: rgba(13, 17, 22, 0.5);
+    //   }
+    // }
+    // div:has(.signature-accept-actions) {
+    //   backdrop-filter: blur(2px);
+    //   background-color: rgba(13, 17, 22, 0.5);
+    // }
+  }
 
+  // .signature-accept-container div:has(.signature-accept-actions) {
+  //   backdrop-filter: blur(2px);
+  //   background-color: rgba(13, 17, 22, 0.5);
+  // }
   // NavigationBar
   .forge-flow > div {
     &:first-child {
@@ -99,7 +117,7 @@ body {
     }
 
     .form-group-no-label {
-      margin-top: -12px;
+      // margin-top: -12px;
     }
 
     .ant-form-item-label {
@@ -326,15 +344,17 @@ body {
         }
       }
     }
-    .label-employee-address {
-      & > .ant-form-item-control {
-        & > div {
-          & > div {
-            margin-bottom: 20px;
-          }
-        }
-      }
-    }
+
+    // .label-employee-address {
+    //   & > .ant-form-item-control {
+    //     & > div {
+    //       & > div {
+    //         margin-bottom: 20px;
+    //       }
+    //     }
+    //   }
+    // }
+
     #saveAndContinueButton {
       background: transparent;
       color: var(--Text-Interactive, #62c9d0);
