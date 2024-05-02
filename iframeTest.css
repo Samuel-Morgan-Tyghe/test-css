@@ -16,7 +16,8 @@ body {
   max-width: 50vw; }
 
 #page-title::after {
-  background-color: var(--Text-Interactive, #62c9d0); }
+  background-color: var(--Text-Interactive, #62c9d0);
+  border-radius: 4px; }
 
 .loading-spinner {
   border-left: 4px solid #62c9d0;
@@ -32,14 +33,21 @@ body {
   #root .forge-page {
     padding: 40px 20px 80px; }
   #root .signature-actions-list {
-    background: white;
+    background: #0d1116;
     padding: 18px;
     margin-bottom: 18px;
     border-radius: 4px; }
+    #root .signature-actions-list .action-item-title {
+      color: var(--Text-Primary, #fff);
+      margin-bottom: 8px; }
     #root .signature-actions-list > * {
-      color: #0d1116; }
-    #root .signature-actions-list span {
-      color: #0d1116 !important; }
+      color: var(--Text-Primary, #fff); }
+    #root .signature-actions-list span.notranslate {
+      color: var(--Text-Primary, #fff) !important; }
+    #root .signature-actions-list .circle-icon {
+      background-color: #191d23; }
+    #root .signature-actions-list .circle-icon[type="success"] {
+      background-color: #73CF6B; }
   #root div:has(> .signature-accept-actions) {
     backdrop-filter: blur(2px);
     background-color: rgba(13, 17, 22, 0.5); }
@@ -78,6 +86,9 @@ body {
           fill: #ffffff; }
   #root .workflow-message {
     border-radius: 4px; }
+  #root .workflow-message-warning {
+    background: rgba(255, 161, 74, 0.1);
+    color: #ffa14a; }
   #root div[data-cy="pageContainer"] {
     border-radius: 4px; }
     #root div[data-cy="pageContainer"] .react-pdf__Page__canvas {

@@ -22,6 +22,7 @@ body {
 
 #page-title::after {
   background-color: var(--Text-Interactive, #62c9d0);
+  border-radius: 4px;
 }
 
 .loading-spinner {
@@ -44,17 +45,29 @@ body {
   }
 
   .signature-actions-list {
-    background: white;
+    background: #0d1116;
     padding: 18px;
     margin-bottom: 18px;
     border-radius: 4px;
 
-    & > * {
-      color: #0d1116;
+    .action-item-title {
+      color: var(--Text-Primary, #fff);
+      margin-bottom: 8px;
     }
 
-    span {
-      color: #0d1116 !important;
+    & > * {
+      color: var(--Text-Primary, #fff);
+    }
+
+    span.notranslate {
+      color: var(--Text-Primary, #fff) !important;
+    }
+
+    .circle-icon {
+      background-color: #191d23;
+    }
+    .circle-icon[type="success"] {
+      background-color: #73cf6b;
     }
   }
 
@@ -135,6 +148,10 @@ body {
   }
   .workflow-message {
     border-radius: 4px;
+  }
+  .workflow-message-warning {
+    background: rgba(255, 161, 74, 0.1);
+    color: rgba(255, 161, 74, 1);
   }
 
   div[data-cy="pageContainer"] {
