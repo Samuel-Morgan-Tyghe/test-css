@@ -345,6 +345,9 @@ body {
         #root .basic-layout #saveAndContinueButton > svg > path {
           fill: var(--Text-Interactive, #62c9d0); }
 
+.ant-form-item-has-error {
+  border-color: #fb7578 !important; }
+
 form > div {
   opacity: 0;
   transform: translateY(20px);

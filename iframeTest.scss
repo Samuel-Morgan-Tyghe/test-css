@@ -514,6 +514,9 @@ body {
   }
 }
 
+.ant-form-item-has-error {
+  border-color: #fb7578 !important;
+}
 form > div {
   opacity: 0;
   transform: translateY(20px);
