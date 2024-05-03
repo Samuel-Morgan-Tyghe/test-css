@@ -127,7 +127,9 @@ body {
     #root .basic-layout label > span[title] {
       color: var(--Text-Primary, #fff); }
     #root .forge-flow label > span[title],
-    #root .basic-layout label > span[title] {
+    #root .forge-flow .optional,
+    #root .basic-layout label > span[title],
+    #root .basic-layout .optional {
       font-feature-settings: "clig" off, "liga" off;
       /* Body/Small/Medium */
       font-family: Inter;
@@ -241,6 +243,7 @@ body {
       border-radius: var(--ContainerCorner, 4px);
       text-align: left;
       min-width: auto;
+      max-width: 100%;
       font-family: Inter;
       font-size: 12px;
       font-weight: 500 !important;

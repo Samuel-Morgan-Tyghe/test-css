@@ -207,7 +207,8 @@ body {
       color: var(--Text-Primary, #fff);
     }
 
-    label > span[title] {
+    label > span[title],
+    .optional {
       font-feature-settings: "clig" off, "liga" off;
 
       /* Body/Small/Medium */
@@ -339,6 +340,7 @@ body {
       border-radius: var(--ContainerCorner, 4px);
       text-align: left;
       min-width: auto;
+      max-width: 100%;
 
       //styleName: Body/Base/Semibold;
       font-family: Inter;
