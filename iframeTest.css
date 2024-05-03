@@ -291,7 +291,8 @@ body {
       #root .forge-flow .ant-btn > span,
       #root .basic-layout button > span,
       #root .basic-layout .ant-btn > span {
-        user-select: none !important; }
+        user-select: none !important;
+        text-wrap: pretty; }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-checkbox-wrapper,
     #root .basic-layout .ant-form-item .ant-form-item-control .ant-checkbox-wrapper {
       background: var(--Background-Secondary, #151a1f);
