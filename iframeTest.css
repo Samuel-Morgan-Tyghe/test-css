@@ -252,7 +252,7 @@ body {
       #root .forge-flow .ant-btn svg path,
       #root .basic-layout button svg path,
       #root .basic-layout .ant-btn svg path {
-        fill: var(--Button-Primary-Foreground-Default, #0d1116); }
+        fill: var(--Button-Primary-Foreground-Active, #fff); }
       #root .forge-flow button:active, #root .forge-flow button:focus, #root .forge-flow button:visited,
       #root .forge-flow .ant-btn:active,
       #root .forge-flow .ant-btn:focus,
