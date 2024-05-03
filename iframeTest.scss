@@ -32,6 +32,12 @@ body {
 }
 
 #root {
+  * {
+    &::selection {
+      color: #62c9d0;
+      background: white;
+    }
+  }
   .react-swipeable-view-container {
     & > div {
       max-height: 100vh;
@@ -316,49 +322,6 @@ body {
         }
       }
     }
-    // .button-bar .forge-submit {
-    //   height: auto;
-    //   user-select: none !important;
-    //   background: white;
-    //   padding: 12px 20px;
-    //   font-feature-settings: "clig" off, "liga" off;
-    //   border-radius: var(--ContainerCorner, 4px);
-    //   background: var(--Button-Primary-Background-Default, #fff);
-    //   //styleName: Body/Base/Semibold;
-    //   font-family: Inter;
-    //   font-size: 14px;
-    //   font-weight: 600 !important;
-    //   color: var(--Button-Primary-Foreground-Default, #0d1116);
-    //   border-width: 2px;
-
-    //   svg {
-    //     path {
-    //       fill: var(--Button-Primary-Foreground-Default, #0d1116);
-    //     }
-    //   }
-
-    //   &:active,
-    //   &:focus,
-    //   &:visited {
-    //     background: rgba(198, 203, 206, 1);
-
-    //     span: {
-    //       background: inherit;
-    //     }
-    //   }
-
-    //   &:disabled {
-    //     background: rgba(198, 203, 206, 1);
-
-    //     span: {
-    //       background: rgba(198, 203, 206, 1);
-    //     }
-    //   }
-
-    //   & > span {
-    //     user-select: none !important;
-    //   }
-    // }
 
     button,
     .ant-btn {
@@ -368,6 +331,7 @@ body {
       padding: 12px 20px;
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
+      text-align: left;
 
       //styleName: Body/Base/Semibold;
       font-family: Inter;

@@ -26,6 +26,9 @@ body {
 
 #root {
   /* base */ }
+  #root *::selection {
+    color: #62c9d0;
+    background: white; }
   #root .react-swipeable-view-container > div {
     max-height: 100vh;
     padding-bottom: 18px;
@@ -231,6 +234,7 @@ body {
       padding: 12px 20px;
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
+      text-align: left;
       font-family: Inter;
       font-size: 14px;
       font-weight: 600 !important;
