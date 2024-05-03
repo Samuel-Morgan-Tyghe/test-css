@@ -182,7 +182,6 @@ body {
       padding: 2px 8px; }
       #root .forge-flow .ant-select > .ant-select-selector .ant-select-selection-item,
       #root .basic-layout .ant-select > .ant-select-selector .ant-select-selection-item {
-        line-height: normal;
         display: flex;
         padding: 8px 0; }
       #root .forge-flow .ant-select > .ant-select-selector .dropdown-option-value,
@@ -236,8 +235,8 @@ body {
       border-radius: var(--ContainerCorner, 4px);
       text-align: left;
       font-family: Inter;
-      font-size: 14px;
-      font-weight: 600 !important;
+      font-size: 12px;
+      font-weight: 500 !important;
       border-width: 2px;
       background: var(--Button-Primary-Background-Active, #151a1f) !important;
       color: var(--Button-Primary-Foreground-Active, #fff) !important;
@@ -312,7 +311,6 @@ body {
       border-color: var(--Background-Secondary, #151a1f);
       display: flex;
       padding: 14px 8px;
-      line-height: 20px;
       align-items: center;
       gap: 8px;
       align-self: stretch;
@@ -347,7 +345,6 @@ body {
       align-items: center;
       min-height: 48px;
       padding: 14px 8px;
-      line-height: 20px;
       align-items: center;
       gap: 8px;
       align-self: stretch;
