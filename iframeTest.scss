@@ -424,6 +424,11 @@ body {
           #fff
         ) !important;
       }
+      &.ant-btn-link {
+        color: #62c9d0 !important;
+        background-color: transparent !important;
+        border: none !important;
+      }
 
       &.circle-icon-button-container {
         border: none !important;
