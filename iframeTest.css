@@ -272,10 +272,13 @@ body {
       #root .basic-layout button.ant-btn-solid-light,
       #root .basic-layout .ant-btn.ant-btn-solid-light {
         border: 1px solid #3c434b !important; }
-      #root .forge-flow button.forge-submit,
+      #root .forge-flow button.forge-submit, #root .forge-flow button.ant-btn-cta,
       #root .forge-flow .ant-btn.forge-submit,
+      #root .forge-flow .ant-btn.ant-btn-cta,
       #root .basic-layout button.forge-submit,
-      #root .basic-layout .ant-btn.forge-submit {
+      #root .basic-layout button.ant-btn-cta,
+      #root .basic-layout .ant-btn.forge-submit,
+      #root .basic-layout .ant-btn.ant-btn-cta {
         color: var(--Button-Primary-Background-Active, #0d1116) !important;
         background-color: var(--Button-Primary-Foreground-Active, #fff) !important; }
       #root .forge-flow button.circle-icon-button-container,
@@ -305,8 +308,19 @@ body {
       border-width: 1px !important;
       margin-top: 8px;
       margin-bottom: 8px; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker input,
+    #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker input {
+      color: var(--Text-Primary, #fff) !important; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker .anticon-close-circle,
+    #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker .anticon-close-circle {
+      background: var(--Background-Secondary, #151a1f); }
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker svg path,
+    #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker svg path {
+      fill: var(--Text-Primary, #fff) !important; }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-input,
-    #root .basic-layout .ant-form-item .ant-form-item-control .ant-input {
+    #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker,
+    #root .basic-layout .ant-form-item .ant-form-item-control .ant-input,
+    #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker {
       background: var(--Background-Secondary, #151a1f);
       border-radius: var(--ContainerCorner, 4px);
       color: var(--Text-Primary, #fff);
@@ -322,16 +336,24 @@ body {
       background: var(--Background-Secondary, #151a1f);
       border-width: 1px !important; }
       #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:focus, #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:active, #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:hover,
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker:focus,
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker:active,
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker:hover,
       #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:focus,
       #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:active,
-      #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:hover {
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:hover,
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker:focus,
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker:active,
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker:hover {
         border-color: var(--Text-Interactive, #62c9d0);
         background: var(--Background-Secondary, #151a1f);
         border-radius: var(--ContainerCorner, 4px);
         color: var(--Text-Primary, #fff);
         border-color: var(--Background-Secondary, #151a1f); }
       #root .forge-flow .ant-form-item .ant-form-item-control .ant-input:placeholder,
-      #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:placeholder {
+      #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker:placeholder,
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-input:placeholder,
+      #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker:placeholder {
         color: var(--Text-Disabled, #585f67); }
     #root .forge-flow #saveAndContinueButton,
     #root .basic-layout #saveAndContinueButton {

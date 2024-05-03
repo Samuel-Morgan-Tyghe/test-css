@@ -416,7 +416,8 @@ body {
         // color: var(--Button-Primary-Foreground-Active, #fff);
       }
 
-      &.forge-submit {
+      &.forge-submit,
+      &.ant-btn-cta {
         color: var(--Button-Primary-Background-Active, #0d1116) !important;
         background-color: var(
           --Button-Primary-Foreground-Active,
@@ -454,7 +455,23 @@ body {
           margin-bottom: 8px;
         }
 
-        .ant-input {
+        .ant-picker {
+          input {
+            color: var(--Text-Primary, #fff) !important;
+          }
+          .anticon-close-circle {
+            background: var(--Background-Secondary, #151a1f);
+          }
+
+          svg {
+            path {
+              fill: var(--Text-Primary, #fff) !important;
+            }
+          }
+        }
+
+        .ant-input,
+        .ant-picker {
           background: var(--Background-Secondary, #151a1f);
           border-radius: var(--ContainerCorner, 4px);
           color: var(--Text-Primary, #fff);
