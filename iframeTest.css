@@ -26,9 +26,15 @@ body {
 
 #root {
   /* base */ }
-  #root *::selection {
-    color: #62c9d0;
-    background: white; }
+  #root * {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: normal; }
+    #root *::selection {
+      color: #62c9d0;
+      background: white; }
   #root .react-swipeable-view-container > div {
     max-height: 100vh;
     padding-bottom: 18px;
@@ -113,15 +119,15 @@ body {
     #root .forge-flow #header-title,
     #root .forge-flow .markdown,
     #root .forge-flow .page-description,
-    #root .forge-flow label > span,
+    #root .forge-flow label > span[title],
     #root .basic-layout #page-title,
     #root .basic-layout #header-title,
     #root .basic-layout .markdown,
     #root .basic-layout .page-description,
-    #root .basic-layout label > span {
+    #root .basic-layout label > span[title] {
       color: var(--Text-Primary, #fff); }
-    #root .forge-flow label > span,
-    #root .basic-layout label > span {
+    #root .forge-flow label > span[title],
+    #root .basic-layout label > span[title] {
       font-feature-settings: "clig" off, "liga" off;
       /* Body/Small/Medium */
       font-family: Inter;
@@ -234,6 +240,7 @@ body {
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
       text-align: left;
+      min-width: auto;
       font-family: Inter;
       font-size: 12px;
       font-weight: 500 !important;

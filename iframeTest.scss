@@ -33,6 +33,12 @@ body {
 
 #root {
   * {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: normal;
+
     &::selection {
       color: #62c9d0;
       background: white;
@@ -197,11 +203,11 @@ body {
     #header-title,
     .markdown,
     .page-description,
-    label > span {
+    label > span[title] {
       color: var(--Text-Primary, #fff);
     }
 
-    label > span {
+    label > span[title] {
       font-feature-settings: "clig" off, "liga" off;
 
       /* Body/Small/Medium */
@@ -332,6 +338,7 @@ body {
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
       text-align: left;
+      min-width: auto;
 
       //styleName: Body/Base/Semibold;
       font-family: Inter;
