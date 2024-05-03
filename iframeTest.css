@@ -308,6 +308,12 @@ body {
       border-width: 1px !important;
       margin-top: 8px;
       margin-bottom: 8px; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .dropzone > svg path,
+    #root .basic-layout .ant-form-item .ant-form-item-control .dropzone > svg path {
+      fill: var(--Text-Primary, #fff) !important; }
+    #root .forge-flow .ant-form-item .ant-form-item-control .dropzone > div,
+    #root .basic-layout .ant-form-item .ant-form-item-control .dropzone > div {
+      color: var(--Text-Primary, #fff) !important; }
     #root .forge-flow .ant-form-item .ant-form-item-control .ant-picker input,
     #root .basic-layout .ant-form-item .ant-form-item-control .ant-picker input {
       color: var(--Text-Primary, #fff) !important; }

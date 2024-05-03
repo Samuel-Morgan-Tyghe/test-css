@@ -455,6 +455,17 @@ body {
           margin-bottom: 8px;
         }
 
+        .dropzone {
+          & > svg {
+            path {
+              fill: var(--Text-Primary, #fff) !important;
+            }
+          }
+          & > div {
+            color: var(--Text-Primary, #fff) !important;
+          }
+        }
+
         .ant-picker {
           input {
             color: var(--Text-Primary, #fff) !important;
