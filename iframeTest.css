@@ -47,7 +47,7 @@ body {
     #root .signature-actions-list .circle-icon {
       background-color: #191d23; }
     #root .signature-actions-list .circle-icon[type="success"] {
-      background-color: #73CF6B; }
+      background-color: #73cf6b; }
   #root div:has(> .signature-accept-actions) {
     backdrop-filter: blur(2px);
     background-color: rgba(13, 17, 22, 0.5); }
@@ -128,6 +128,12 @@ body {
     #root .forge-flow .optional,
     #root .basic-layout .optional {
       padding-right: 3px; }
+    #root .forge-flow .ant-select-dropdown .ant-select-item-empty p,
+    #root .basic-layout .ant-select-dropdown .ant-select-item-empty p {
+      color: var(--Text-Primary, #fff) !important; }
+    #root .forge-flow .ant-select-dropdown .ant-select-item-empty svg path,
+    #root .basic-layout .ant-select-dropdown .ant-select-item-empty svg path {
+      fill: var(--Text-Primary, #fff) !important; }
     #root .forge-flow .ant-select .ant-select-selector,
     #root .basic-layout .ant-select .ant-select-selector {
       height: auto; }
@@ -225,12 +231,13 @@ body {
       padding: 12px 20px;
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
-      background: var(--Button-Primary-Background-Default, #fff);
       font-family: Inter;
       font-size: 14px;
       font-weight: 600 !important;
-      color: var(--Button-Primary-Foreground-Default, #0d1116);
-      border-width: 2px; }
+      border-width: 2px;
+      background: var(--Button-Primary-Background-Active, #151a1f) !important;
+      color: var(--Button-Primary-Foreground-Active, #fff) !important;
+      border: 1px solid #151a1f !important; }
       #root .forge-flow button svg path,
       #root .forge-flow .ant-btn svg path,
       #root .basic-layout button svg path,
@@ -247,6 +254,7 @@ body {
       #root .basic-layout .ant-btn:focus,
       #root .basic-layout .ant-btn:visited {
         background: #c6cbce;
+        border: 1px solid #3c434b !important;
         span-background: inherit; }
       #root .forge-flow button:disabled,
       #root .forge-flow .ant-btn:disabled,
@@ -258,14 +266,24 @@ body {
       #root .forge-flow .ant-btn.ant-btn-solid-black,
       #root .basic-layout button.ant-btn-solid-black,
       #root .basic-layout .ant-btn.ant-btn-solid-black {
-        background: var(--Button-Primary-Background-Active, #0d1116);
-        color: var(--Button-Primary-Foreground-Active, #fff); }
+        border: 1px solid #62c9d0 !important; }
       #root .forge-flow button.ant-btn-solid-light,
       #root .forge-flow .ant-btn.ant-btn-solid-light,
       #root .basic-layout button.ant-btn-solid-light,
       #root .basic-layout .ant-btn.ant-btn-solid-light {
-        background: var(--Button-Primary-Background-Active, #fff);
-        color: var(--Button-Primary-Foreground-Active, #0d1116); }
+        border: 1px solid #3c434b !important; }
+      #root .forge-flow button.forge-submit,
+      #root .forge-flow .ant-btn.forge-submit,
+      #root .basic-layout button.forge-submit,
+      #root .basic-layout .ant-btn.forge-submit {
+        color: var(--Button-Primary-Background-Active, #0d1116) !important;
+        background-color: var(--Button-Primary-Foreground-Active, #fff) !important; }
+      #root .forge-flow button.circle-icon-button-container,
+      #root .forge-flow .ant-btn.circle-icon-button-container,
+      #root .basic-layout button.circle-icon-button-container,
+      #root .basic-layout .ant-btn.circle-icon-button-container {
+        border: none !important;
+        background-color: transparent !important; }
       #root .forge-flow button > span,
       #root .forge-flow .ant-btn > span,
       #root .basic-layout button > span,
@@ -317,8 +335,9 @@ body {
         color: var(--Text-Disabled, #585f67); }
     #root .forge-flow #saveAndContinueButton,
     #root .basic-layout #saveAndContinueButton {
-      background: transparent;
-      color: var(--Text-Interactive, #62c9d0); }
+      background: transparent !important;
+      color: var(--Text-Interactive, #62c9d0) !important;
+      border: none !important; }
       #root .forge-flow #saveAndContinueButton > svg,
       #root .basic-layout #saveAndContinueButton > svg {
         color: var(--Text-Interactive, #62c9d0); }
@@ -342,28 +361,28 @@ form > div {
 
 /* Increasing the delay for each child */
 form > div:nth-child(1) {
-  animation-delay: 100ms; }
+  animation-duration: 100ms; }
 
 form > div:nth-child(2) {
-  animation-delay: 200ms; }
+  animation-duration: 200ms; }
 
 form > div:nth-child(3) {
-  animation-delay: 300ms; }
+  animation-duration: 300ms; }
 
 form > div:nth-child(4) {
-  animation-delay: 400ms; }
+  animation-duration: 400ms; }
 
 form > div:nth-child(5) {
-  animation-delay: 500ms; }
+  animation-duration: 500ms; }
 
 form > div:nth-child(6) {
-  animation-delay: 600ms; }
+  animation-duration: 600ms; }
 
 form > div:nth-child(7) {
-  animation-delay: 700ms; }
+  animation-duration: 700ms; }
 
 form > div:nth-child(8) {
-  animation-delay: 800ms; }
+  animation-duration: 800ms; }
 
 form > div:nth-child(9) {
-  animation-delay: 900ms; }
+  animation-duration: 900ms; }

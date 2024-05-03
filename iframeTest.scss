@@ -209,6 +209,17 @@ body {
       padding-right: 3px;
     }
 
+    .ant-select-dropdown .ant-select-item-empty {
+      p {
+        color: var(--Text-Primary, #fff) !important;
+      }
+      svg {
+        path {
+          fill: var(--Text-Primary, #fff) !important;
+        }
+      }
+    }
+
     .ant-select {
       .ant-select-selector {
         height: auto;
@@ -224,6 +235,7 @@ body {
         height: auto;
         text-wrap: pretty;
       }
+
       .ant-select-arrow {
         color: var(--Text-Primary, #fff);
         svg {
@@ -304,6 +316,49 @@ body {
         }
       }
     }
+    // .button-bar .forge-submit {
+    //   height: auto;
+    //   user-select: none !important;
+    //   background: white;
+    //   padding: 12px 20px;
+    //   font-feature-settings: "clig" off, "liga" off;
+    //   border-radius: var(--ContainerCorner, 4px);
+    //   background: var(--Button-Primary-Background-Default, #fff);
+    //   //styleName: Body/Base/Semibold;
+    //   font-family: Inter;
+    //   font-size: 14px;
+    //   font-weight: 600 !important;
+    //   color: var(--Button-Primary-Foreground-Default, #0d1116);
+    //   border-width: 2px;
+
+    //   svg {
+    //     path {
+    //       fill: var(--Button-Primary-Foreground-Default, #0d1116);
+    //     }
+    //   }
+
+    //   &:active,
+    //   &:focus,
+    //   &:visited {
+    //     background: rgba(198, 203, 206, 1);
+
+    //     span: {
+    //       background: inherit;
+    //     }
+    //   }
+
+    //   &:disabled {
+    //     background: rgba(198, 203, 206, 1);
+
+    //     span: {
+    //       background: rgba(198, 203, 206, 1);
+    //     }
+    //   }
+
+    //   & > span {
+    //     user-select: none !important;
+    //   }
+    // }
 
     button,
     .ant-btn {
@@ -313,13 +368,16 @@ body {
       padding: 12px 20px;
       font-feature-settings: "clig" off, "liga" off;
       border-radius: var(--ContainerCorner, 4px);
-      background: var(--Button-Primary-Background-Default, #fff);
+
       //styleName: Body/Base/Semibold;
       font-family: Inter;
       font-size: 14px;
       font-weight: 600 !important;
-      color: var(--Button-Primary-Foreground-Default, #0d1116);
       border-width: 2px;
+
+      background: var(--Button-Primary-Background-Active, #151a1f) !important;
+      color: var(--Button-Primary-Foreground-Active, #fff) !important;
+      border: 1px solid #151a1f !important;
 
       svg {
         path {
@@ -331,6 +389,7 @@ body {
       &:focus,
       &:visited {
         background: rgba(198, 203, 206, 1);
+        border: 1px solid #3c434b !important;
 
         span: {
           background: inherit;
@@ -346,13 +405,28 @@ body {
       }
 
       &.ant-btn-solid-black {
-        background: var(--Button-Primary-Background-Active, #0d1116);
-        color: var(--Button-Primary-Foreground-Active, #fff);
+        // background: var(--Button-Primary-Background-Active, #0d1116);
+        // color: var(--Button-Primary-Foreground-Active, #fff);
+        border: 1px solid #62c9d0 !important;
       }
 
       &.ant-btn-solid-light {
-        background: var(--Button-Primary-Background-Active, #fff);
-        color: var(--Button-Primary-Foreground-Active, #0d1116);
+        border: 1px solid #3c434b !important;
+
+        // color: var(--Button-Primary-Foreground-Active, #fff);
+      }
+
+      &.forge-submit {
+        color: var(--Button-Primary-Background-Active, #0d1116) !important;
+        background-color: var(
+          --Button-Primary-Foreground-Active,
+          #fff
+        ) !important;
+      }
+
+      &.circle-icon-button-container {
+        border: none !important;
+        background-color: transparent !important;
       }
 
       & > span {
@@ -425,8 +499,9 @@ body {
     // }
 
     #saveAndContinueButton {
-      background: transparent;
-      color: var(--Text-Interactive, #62c9d0);
+      background: transparent !important;
+      color: var(--Text-Interactive, #62c9d0) !important;
+      border: none !important;
 
       & > svg {
         color: var(--Text-Interactive, #62c9d0);
@@ -459,29 +534,29 @@ form > div {
 
 /* Increasing the delay for each child */
 form > div:nth-child(1) {
-  animation-delay: 100ms;
+  animation-duration: 100ms;
 }
 form > div:nth-child(2) {
-  animation-delay: 200ms;
+  animation-duration: 200ms;
 }
 form > div:nth-child(3) {
-  animation-delay: 300ms;
+  animation-duration: 300ms;
 }
 form > div:nth-child(4) {
-  animation-delay: 400ms;
+  animation-duration: 400ms;
 }
 form > div:nth-child(5) {
-  animation-delay: 500ms;
+  animation-duration: 500ms;
 }
 form > div:nth-child(6) {
-  animation-delay: 600ms;
+  animation-duration: 600ms;
 }
 form > div:nth-child(7) {
-  animation-delay: 700ms;
+  animation-duration: 700ms;
 }
 form > div:nth-child(8) {
-  animation-delay: 800ms;
+  animation-duration: 800ms;
 }
 form > div:nth-child(9) {
-  animation-delay: 900ms;
+  animation-duration: 900ms;
 }
