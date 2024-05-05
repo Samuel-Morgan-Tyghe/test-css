@@ -89,6 +89,11 @@ body {
     }
   }
 
+  div[data-cy="loadingOverlay"] {
+    backdrop-filter: blur(2px);
+    background-color: rgba(13, 17, 22, 0.5);
+  }
+
   div:has(> .signature-accept-actions) {
     backdrop-filter: blur(2px);
     background-color: rgba(13, 17, 22, 0.5);
@@ -531,51 +536,52 @@ body {
   border-color: #fb7578 !important;
 }
 form,
+.basic-layout,
 .forge-page,
 .ant-row {
   & > div {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease forwards;
-    animation-delay: 900ms;
+    animation-delay: 800ms;
     animation-duration: 1500ms;
   }
 
   /* Increasing the delay for each child */
   & > div:nth-child(1) {
-    animation-delay: 100ms;
+    animation-delay: 0ms;
     animation-duration: 700ms;
   }
   & > div:nth-child(2) {
-    animation-delay: 200ms;
+    animation-delay: 100ms;
     animation-duration: 800ms;
   }
   & > div:nth-child(3) {
-    animation-delay: 300ms;
+    animation-delay: 200ms;
     animation-duration: 900ms;
   }
   & > div:nth-child(4) {
-    animation-delay: 400ms;
+    animation-delay: 300ms;
     animation-duration: 1000ms;
   }
   & > div:nth-child(5) {
-    animation-delay: 500ms;
+    animation-delay: 400ms;
     animation-duration: 1100ms;
   }
   & > div:nth-child(6) {
-    animation-delay: 600ms;
+    animation-delay: 500ms;
     animation-duration: 1200ms;
   }
   & > div:nth-child(7) {
-    animation-delay: 700ms;
+    animation-delay: 600ms;
     animation-duration: 1300ms;
   }
   & > div:nth-child(8) {
-    animation-delay: 800ms;
+    animation-delay: 700ms;
     animation-duration: 1400ms;
   }
   & > div:nth-child(9) {
-    animation-delay: 900ms;
+    animation-delay: 800ms;
     animation-duration: 1500ms;
   }
 }
