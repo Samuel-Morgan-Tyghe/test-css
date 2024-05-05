@@ -24,10 +24,43 @@ body {
   width: 40px;
   height: 40px; }
 
-.ant-modal-root .ant-modal {
-  border-radius: 4px; }
-  .ant-modal-root .ant-modal .forge-submit {
+.ant-modal-root {
+  background: #0d1116; }
+  .ant-modal-root * {
+    font-family: Inter;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: normal; }
+    .ant-modal-root *::selection {
+      color: #62c9d0;
+      background: white; }
+    .ant-modal-root * > * {
+      color: var(--Text-Primary, #fff); }
+  .ant-modal-root .ant-modal {
     border-radius: 4px; }
+    .ant-modal-root .ant-modal .ant-modal-content {
+      background: #0d1116; }
+      .ant-modal-root .ant-modal .ant-modal-content .ant-modal-header {
+        border: none;
+        padding-bottom: 0; }
+        .ant-modal-root .ant-modal .ant-modal-content .ant-modal-header .circle-icon {
+          background: #0d1116; }
+          .ant-modal-root .ant-modal .ant-modal-content .ant-modal-header .circle-icon svg path {
+            fill: #fff; }
+      .ant-modal-root .ant-modal .ant-modal-content .ant-modal-header,
+      .ant-modal-root .ant-modal .ant-modal-content .ant-modal-body {
+        background-color: transparent; }
+      .ant-modal-root .ant-modal .ant-modal-content .ant-modal-body input {
+        background-color: #0d1116;
+        color: var(--Text-Primary, #fff) !important; }
+      .ant-modal-root .ant-modal .ant-modal-content .ant-modal-body button {
+        color: #0d1116 !important;
+        background-color: var(--Text-Primary, #fff) !important; }
+        .ant-modal-root .ant-modal .ant-modal-content .ant-modal-body button span {
+          color: #0d1116 !important; }
+      .ant-modal-root .ant-modal .ant-modal-content .forge-submit {
+        border-radius: 4px; }
 
 #root {
   /* base */ }
