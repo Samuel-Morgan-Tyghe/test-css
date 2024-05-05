@@ -31,6 +31,16 @@ body {
   height: 40px;
 }
 
+.ant-modal-root {
+  .ant-modal {
+    border-radius: 4px;
+
+    .forge-submit {
+      border-radius: 4px;
+    }
+  }
+}
+
 #root {
   * {
     font-family: Inter;
@@ -168,6 +178,19 @@ body {
         }
       }
     }
+  }
+
+  #page1,
+  #page2,
+  #page3,
+  #page4,
+  #page5,
+  #page6,
+  #page7,
+  #page8,
+  #page9,
+  #page10 {
+    border-radius: 4px;
   }
   .workflow-message {
     border-radius: 4px;

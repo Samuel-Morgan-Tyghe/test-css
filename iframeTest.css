@@ -24,6 +24,11 @@ body {
   width: 40px;
   height: 40px; }
 
+.ant-modal-root .ant-modal {
+  border-radius: 4px; }
+  .ant-modal-root .ant-modal .forge-submit {
+    border-radius: 4px; }
+
 #root {
   /* base */ }
   #root * {
@@ -98,6 +103,17 @@ body {
         background-color: #151a1f !important; }
         #root .forge-flow > div:last-child button:disabled .button-circle svg path {
           fill: #ffffff; }
+  #root #page1,
+  #root #page2,
+  #root #page3,
+  #root #page4,
+  #root #page5,
+  #root #page6,
+  #root #page7,
+  #root #page8,
+  #root #page9,
+  #root #page10 {
+    border-radius: 4px; }
   #root .workflow-message {
     border-radius: 4px; }
   #root .workflow-message-warning {
