@@ -81,6 +81,12 @@ body {
     .circle-icon[type="success"] {
       background-color: #73cf6b;
     }
+
+    .ant-checkbox-wrapper {
+      & > * {
+        color: var(--Text-Primary, #fff);
+      }
+    }
   }
 
   div:has(> .signature-accept-actions) {

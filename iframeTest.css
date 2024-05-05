@@ -57,6 +57,8 @@ body {
       background-color: #191d23; }
     #root .signature-actions-list .circle-icon[type="success"] {
       background-color: #73cf6b; }
+    #root .signature-actions-list .ant-checkbox-wrapper > * {
+      color: var(--Text-Primary, #fff); }
   #root div:has(> .signature-accept-actions) {
     backdrop-filter: blur(2px);
     background-color: rgba(13, 17, 22, 0.5); }
