@@ -448,12 +448,10 @@ body {
   border-color: #fb7578 !important; }
 
 form,
-.basic-layout,
 .forge-page,
 .ant-row {
   /* Increasing the delay for each child */ }
   form > div,
-  .basic-layout > div,
   .forge-page > div,
   .ant-row > div {
     opacity: 0;
@@ -462,55 +460,46 @@ form,
     animation-delay: 800ms;
     animation-duration: 1500ms; }
   form > div:nth-child(1),
-  .basic-layout > div:nth-child(1),
   .forge-page > div:nth-child(1),
   .ant-row > div:nth-child(1) {
     animation-delay: 0ms;
     animation-duration: 700ms; }
   form > div:nth-child(2),
-  .basic-layout > div:nth-child(2),
   .forge-page > div:nth-child(2),
   .ant-row > div:nth-child(2) {
     animation-delay: 100ms;
     animation-duration: 800ms; }
   form > div:nth-child(3),
-  .basic-layout > div:nth-child(3),
   .forge-page > div:nth-child(3),
   .ant-row > div:nth-child(3) {
     animation-delay: 200ms;
     animation-duration: 900ms; }
   form > div:nth-child(4),
-  .basic-layout > div:nth-child(4),
   .forge-page > div:nth-child(4),
   .ant-row > div:nth-child(4) {
     animation-delay: 300ms;
     animation-duration: 1000ms; }
   form > div:nth-child(5),
-  .basic-layout > div:nth-child(5),
   .forge-page > div:nth-child(5),
   .ant-row > div:nth-child(5) {
     animation-delay: 400ms;
     animation-duration: 1100ms; }
   form > div:nth-child(6),
-  .basic-layout > div:nth-child(6),
   .forge-page > div:nth-child(6),
   .ant-row > div:nth-child(6) {
     animation-delay: 500ms;
     animation-duration: 1200ms; }
   form > div:nth-child(7),
-  .basic-layout > div:nth-child(7),
   .forge-page > div:nth-child(7),
   .ant-row > div:nth-child(7) {
     animation-delay: 600ms;
     animation-duration: 1300ms; }
   form > div:nth-child(8),
-  .basic-layout > div:nth-child(8),
   .forge-page > div:nth-child(8),
   .ant-row > div:nth-child(8) {
     animation-delay: 700ms;
     animation-duration: 1400ms; }
   form > div:nth-child(9),
-  .basic-layout > div:nth-child(9),
   .forge-page > div:nth-child(9),
   .ant-row > div:nth-child(9) {
     animation-delay: 800ms;
