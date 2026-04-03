@@ -1,0 +1,16 @@
+.complexity {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.complexity--atomic {
+  color: #62c9d0;
+}
+
+.complexity--getting-broad {
+  color: #a5b4fc;
+}
+
+.complexity--consider-splitting {
+  color: #fbbf24;
+}

@@ -1,0 +1,169 @@
+.spec-tree {
+  width: 280px;
+  min-width: 280px;
+  background: #0d1116;
+  border-right: 1px solid #1e252d;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.spec-tree__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px;
+  border-bottom: 1px solid #1e252d;
+}
+
+.spec-tree__header h2 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.spec-tree__add {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid #2a3240;
+  background: transparent;
+  color: #62c9d0;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.spec-tree__add:hover {
+  background: #151a1f;
+}
+
+.spec-tree__create {
+  display: flex;
+  gap: 6px;
+  padding: 8px 12px;
+  border-bottom: 1px solid #1e252d;
+}
+
+.spec-tree__create input {
+  flex: 1;
+  background: #151a1f;
+  border: 1px solid #2a3240;
+  border-radius: 4px;
+  color: #fff;
+  padding: 4px 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.spec-tree__create input:focus {
+  border-color: #62c9d0;
+}
+
+.spec-tree__create button {
+  background: #62c9d0;
+  color: #0d1116;
+  border: none;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.spec-tree__list {
+  flex: 1;
+  overflow-y: auto;
+  padding: 8px 0;
+}
+
+.tree-node__row {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 8px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin: 1px 4px;
+  transition: background 0.15s;
+}
+
+.tree-node__row:hover {
+  background: #151a1f;
+}
+
+.tree-node__row--selected {
+  background: #1a2332;
+}
+
+.tree-node__toggle {
+  width: 16px;
+  height: 16px;
+  background: none;
+  border: none;
+  color: #585f67;
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.tree-node__toggle--leaf {
+  color: #2a3240;
+}
+
+.type-badge {
+  font-size: 10px;
+  font-weight: 600;
+  padding: 1px 5px;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+.type-badge--page {
+  background: #1a3a4a;
+  color: #62c9d0;
+}
+
+.type-badge--feature {
+  background: #2a1f3d;
+  color: #a78bfa;
+}
+
+.type-badge--sub-feature {
+  background: #1f2d1a;
+  color: #86efac;
+}
+
+.tree-node__label {
+  font-size: 13px;
+  color: #c9d1d9;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex: 1;
+}
+
+.tree-node__row--selected .tree-node__label {
+  color: #fff;
+}
+
+.stage-progress {
+  font-size: 11px;
+  color: #585f67;
+  flex-shrink: 0;
+}
+
+.stage-progress--done {
+  color: #62c9d0;
+}

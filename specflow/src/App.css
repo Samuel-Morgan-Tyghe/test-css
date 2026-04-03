@@ -1,0 +1,47 @@
+.app {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  background: #111820;
+  color: #c9d1d9;
+  font-family: Inter, 'Open Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.app__main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.app__header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 12px 20px;
+  background: #0d1116;
+  border-bottom: 1px solid #1e252d;
+}
+
+.app__logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app__logo-icon {
+  color: #62c9d0;
+  font-size: 20px;
+}
+
+.app__logo-text {
+  font-size: 16px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.3px;
+}
+
+.app__tagline {
+  font-size: 12px;
+  color: #585f67;
+}
