@@ -5,10 +5,14 @@ import { useStore } from "@nanostores/react";
 import { $selectedSpecId, $activeStageIndex } from "@/stores/ui";
 import { useSpec, useUpdateStage, useCreateSpec } from "@/lib/queries";
 import { STAGE_DEFINITIONS } from "@/types";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { Badge } from "@/components/ui/badge";
+import { cn } from "@/lib/utils";
 import ChunkWarning from "./ChunkWarning";
 import ComplexityIndicator from "./ComplexityIndicator";
 import PRReview from "./PRReview";
-import styles from "./StageEditor.module.css";
 
 const MIN_COMPLETE_LENGTH = 20;
 
@@ -24,14 +28,12 @@ export default function StageEditor() {
   const [childLabel, setChildLabel] = useState("");
   const saveTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
 
-  // Sync local content when spec/stage changes
   useEffect(() => {
     if (spec && spec.stages[activeIdx]) {
       setLocalContent(spec.stages[activeIdx].content);
     }
   }, [spec, activeIdx]);
 
-  // Debounced save
   const handleContentChange = useCallback((value: string) => {
     setLocalContent(value);
     if (saveTimer.current) clearTimeout(saveTimer.current);
@@ -44,8 +46,8 @@ export default function StageEditor() {
 
   if (!spec || !selectedId) {
     return (
-      <div className={`${styles.editor} ${styles.editorEmpty}`}>
-        <p>Select a spec from the tree to begin.</p>
+      <div className="flex-1 flex items-center justify-center">
+        <p className="text-specflow-text-muted text-[15px]">Select a spec from the tree to begin.</p>
       </div>
     );
   }
@@ -60,7 +62,6 @@ export default function StageEditor() {
   const isPRReview = stage.name === "PR_REVIEW";
 
   const handleComplete = () => {
-    // Save content first, then complete
     updateStage.mutate(
       { specId: selectedId, stageIndex: activeIdx, data: { content: localContent, action: "complete" } },
       { onSuccess: () => $activeStageIndex.set(Math.min(activeIdx + 1, spec.stages.length - 1)) },
@@ -68,9 +69,7 @@ export default function StageEditor() {
   };
 
   const handleReopen = () => {
-    updateStage.mutate(
-      { specId: selectedId, stageIndex: activeIdx, data: { action: "reopen" } },
-    );
+    updateStage.mutate({ specId: selectedId, stageIndex: activeIdx, data: { action: "reopen" } });
   };
 
   const handleAddChild = () => {
@@ -86,76 +85,83 @@ export default function StageEditor() {
   };
 
   return (
-    <div className={styles.editor}>
-      <div className={styles.specHeader}>
-        <div className={styles.specInfo}>
-          <h2 className={styles.specTitle}>{spec.label}</h2>
-          <span className={styles.specType}>{spec.type.replace("_", "-").toLowerCase()}</span>
+    <div className="flex-1 p-6 overflow-y-auto flex flex-col gap-4">
+      {/* Spec header */}
+      <div className="flex items-center justify-between">
+        <div className="flex items-baseline gap-2.5">
+          <h2 className="text-xl font-bold text-white">{spec.label}</h2>
+          <span className="text-xs text-specflow-text-muted capitalize">{spec.type.replace("_", "-").toLowerCase()}</span>
         </div>
-        <button className={styles.addChildBtn} onClick={() => setShowAddChild(!showAddChild)}>
+        <Button variant="outline" size="sm" className="text-xs border-specflow-border-light text-specflow-text hover:border-specflow-cyan hover:text-specflow-cyan" onClick={() => setShowAddChild(!showAddChild)}>
           + Add {spec.type === "PAGE" ? "Feature" : "Sub-feature"}
-        </button>
+        </Button>
       </div>
 
       {showAddChild && (
-        <div className={styles.addChildForm}>
-          <input
+        <div className="flex gap-2">
+          <Input
             autoFocus
             placeholder={`${spec.type === "PAGE" ? "Feature" : "Sub-feature"} name...`}
             value={childLabel}
             onChange={(e) => setChildLabel(e.target.value)}
             onKeyDown={(e) => e.key === "Enter" && handleAddChild()}
-            className={styles.addChildInput}
+            className="bg-specflow-surface-alt border-specflow-border-light"
           />
-          <button onClick={handleAddChild} className={styles.addChildSubmit}>Create</button>
+          <Button size="sm" onClick={handleAddChild}>Create</Button>
         </div>
       )}
 
-      <div className={styles.stageHeader}>
-        <h3>{def.label}</h3>
-        <span className={styles.roleBadge}>{def.role}</span>
+      {/* Stage header */}
+      <div className="flex items-center gap-2.5">
+        <h3 className="text-base font-semibold text-specflow-text">{def.label}</h3>
+        <Badge variant="secondary" className="bg-secondary text-specflow-cyan text-[11px] font-semibold uppercase tracking-wider">
+          {def.role}
+        </Badge>
         {isCompleted && stage.completedAt && (
-          <span className={styles.completedAt}>
+          <span className="text-xs text-specflow-text-muted ml-auto">
             Completed {new Date(stage.completedAt).toLocaleDateString()}
           </span>
         )}
       </div>
 
+      {/* PR Review or Editor */}
       {isPRReview && stage.status === "ACTIVE" ? (
         <PRReview spec={spec} />
       ) : (
         <>
           <ChunkWarning stageName={stage.name} content={localContent} specId={selectedId} />
 
-          <div className={`${styles.textareaWrapper} ${
+          <div className={cn(
+            "rounded-lg border transition-colors",
             (stage.name === "IDEATION" || stage.name === "PRD") && localContent.length > 400
-              ? styles.textareaWrapperWarn : ""
-          }`}>
-            <textarea
-              className={styles.textarea}
+              ? "border-amber-500/40"
+              : "border-specflow-border-light"
+          )}>
+            <Textarea
               placeholder={def.placeholder}
               value={localContent}
               onChange={(e) => handleContentChange(e.target.value)}
               disabled={isLocked}
               rows={12}
+              className="bg-specflow-surface-alt border-0 text-specflow-text text-sm leading-relaxed resize-y rounded-lg disabled:opacity-40 disabled:cursor-not-allowed placeholder:text-specflow-text-muted/70"
             />
           </div>
 
-          <div className={styles.footer}>
-            <div className={styles.footerLeft}>
-              <span className={styles.charCount}>{localContent.length} chars</span>
+          <div className="flex items-center justify-between">
+            <div className="flex items-center gap-3">
+              <span className="text-xs text-specflow-text-muted">{localContent.length} chars</span>
               <ComplexityIndicator content={localContent} stageName={stage.name} />
             </div>
-            <div className={styles.footerRight}>
+            <div className="flex items-center gap-2">
               {isCompleted && (
-                <button className={styles.reopenBtn} onClick={handleReopen}>
+                <Button variant="outline" size="sm" className="text-xs border-specflow-border-light text-specflow-text hover:border-destructive hover:text-destructive" onClick={handleReopen}>
                   Re-edit (unlocks this stage, re-locks downstream)
-                </button>
+                </Button>
               )}
               {!isCompleted && !isLocked && (
-                <button className={styles.completeBtn} onClick={handleComplete} disabled={!canComplete}>
+                <Button size="sm" onClick={handleComplete} disabled={!canComplete}>
                   Mark Complete →
-                </button>
+                </Button>
               )}
             </div>
           </div>
@@ -163,11 +169,8 @@ export default function StageEditor() {
       )}
 
       {isPRReview && spec.prAction === "APPROVED" && (
-        <div className={styles.footer}>
-          <div className={styles.footerLeft} />
-          <div className={styles.footerRight}>
-            <span className={styles.merged}>All stages complete</span>
-          </div>
+        <div className="flex items-center justify-end">
+          <span className="text-[13px] font-semibold text-specflow-cyan">All stages complete</span>
         </div>
       )}
     </div>

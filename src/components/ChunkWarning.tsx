@@ -2,7 +2,8 @@
 
 import { shouldShowChunkWarning } from "@/utils/chunkAnalysis";
 import { useSplitSpec } from "@/lib/queries";
-import styles from "./ChunkWarning.module.css";
+import { Button } from "@/components/ui/button";
+import { cn } from "@/lib/utils";
 
 interface Props {
   stageName: string;
@@ -24,10 +25,25 @@ export default function ChunkWarning({ stageName, content, specId }: Props) {
   };
 
   return (
-    <div className={`${styles.warning} ${level === "high" ? styles.warningHigh : styles.warningMedium}`}>
-      <span className={styles.icon}>{level === "high" ? "\u26A0" : "\u2191"}</span>
-      <span className={styles.message}>{message}</span>
-      <button className={styles.splitBtn} onClick={handleSplit}>Split ↗</button>
+    <div className={cn(
+      "flex items-center gap-2 px-3 py-2 rounded-md text-[13px] mb-3",
+      level === "high"
+        ? "bg-amber-500/10 border border-amber-500/30 text-amber-400"
+        : "bg-indigo-500/10 border border-indigo-500/30 text-indigo-300"
+    )}>
+      <span className="text-sm shrink-0">{level === "high" ? "\u26A0" : "\u2191"}</span>
+      <span className="flex-1">{message}</span>
+      <Button
+        variant="outline"
+        size="sm"
+        className={cn(
+          "h-6 text-xs border-current",
+          level === "high" ? "text-amber-400 hover:bg-amber-500/10" : "text-indigo-300 hover:bg-indigo-500/10"
+        )}
+        onClick={handleSplit}
+      >
+        Split ↗
+      </Button>
     </div>
   );
 }
