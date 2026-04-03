@@ -1,8 +1,10 @@
-import { useState } from 'react';
-import { useSpecStore } from '../store/specStore';
-import './PRReview.css';
+"use client";
 
-// Mock generated code for the prototype
+import { useState } from "react";
+import { useSubmitPRAction } from "@/lib/queries";
+import type { SpecResponse } from "@/types";
+import styles from "./PRReview.module.css";
+
 const MOCK_DIFF = `// src/components/ColumnSorting.tsx
 + import React, { useState, useCallback } from 'react';
 +
@@ -26,9 +28,7 @@ const MOCK_DIFF = `// src/components/ColumnSorting.tsx
 +         sortConfig?.column === column && sortConfig.direction === 'asc'
 +           ? 'desc'
 +           : 'asc';
-+
 +       setSortConfig({ column, direction });
-+
 +       const sorted = [...data].sort((a, b) => {
 +         const aVal = String(a[column] ?? '');
 +         const bVal = String(b[column] ?? '');
@@ -36,7 +36,6 @@ const MOCK_DIFF = `// src/components/ColumnSorting.tsx
 +           ? aVal.localeCompare(bVal)
 +           : bVal.localeCompare(aVal);
 +       });
-+
 +       onSort(sorted);
 +     },
 +     [data, onSort, sortConfig]
@@ -46,7 +45,7 @@ const MOCK_DIFF = `// src/components/ColumnSorting.tsx
 +     <thead>
 +       <tr>
 +         {columns.map((col) => (
-+           <th key={col} onClick={() => handleSort(col)} style={{ cursor: 'pointer' }}>
++           <th key={col} onClick={() => handleSort(col)}>
 +             {col}
 +             {sortConfig?.column === col && (sortConfig.direction === 'asc' ? ' ▲' : ' ▼')}
 +           </th>
@@ -56,58 +55,44 @@ const MOCK_DIFF = `// src/components/ColumnSorting.tsx
 +   );
 + }`;
 
-interface Props {
-  specId: string;
-}
-
-export default function PRReview({ specId }: Props) {
-  const spec = useSpecStore((s) => s.specs[specId]);
-  const setPRAction = useSpecStore((s) => s.setPRAction);
-  const [comment, setComment] = useState('');
+export default function PRReview({ spec }: { spec: SpecResponse }) {
+  const prAction = useSubmitPRAction();
+  const [comment, setComment] = useState("");
   const [showCommentBox, setShowCommentBox] = useState(false);
 
-  if (!spec) return null;
-
-  if (spec.prAction === 'approved') {
+  if (spec.prAction === "APPROVED") {
     return (
-      <div className="pr-review">
-        <div className="pr-review__status pr-review__status--approved">
-          ✓ Merged to develop
-        </div>
-        <div className="pr-review__diff">
-          <pre>{MOCK_DIFF}</pre>
-        </div>
+      <div className={styles.review}>
+        <div className={styles.statusApproved}>{"\u2713"} Merged to develop</div>
+        <div className={styles.diff}><pre>{MOCK_DIFF}</pre></div>
       </div>
     );
   }
 
   const handleApprove = () => {
-    setPRAction(specId, 'approved');
+    prAction.mutate({ specId: spec.id, action: "APPROVED" });
   };
 
   const handleRequestChanges = () => {
-    if (!showCommentBox) {
-      setShowCommentBox(true);
-      return;
-    }
-    setPRAction(specId, 'changes-requested', comment);
-    setComment('');
+    if (!showCommentBox) { setShowCommentBox(true); return; }
+    prAction.mutate({ specId: spec.id, action: "CHANGES_REQUESTED", comment });
+    setComment("");
     setShowCommentBox(false);
   };
 
   return (
-    <div className="pr-review">
-      <div className="pr-review__header">
+    <div className={styles.review}>
+      <div className={styles.header}>
         <h3>Generated Code</h3>
-        <p className="pr-review__hint">Review the AI-generated code below. Approve to merge or request changes.</p>
+        <p className={styles.hint}>Review the AI-generated code below. Approve to merge or request changes.</p>
       </div>
 
-      <div className="pr-review__diff">
-        <div className="pr-review__filename">src/components/ColumnSorting.tsx</div>
+      <div className={styles.diff}>
+        <div className={styles.filename}>src/components/ColumnSorting.tsx</div>
         <pre>
-          {MOCK_DIFF.split('\n').map((line, i) => (
-            <div key={i} className={`pr-review__line ${line.startsWith('+') ? 'pr-review__line--added' : ''}`}>
-              <span className="pr-review__lineno">{i + 1}</span>
+          {MOCK_DIFF.split("\n").map((line, i) => (
+            <div key={i} className={`${styles.line} ${line.startsWith("+") ? styles.lineAdded : ""}`}>
+              <span className={styles.lineno}>{i + 1}</span>
               {line}
             </div>
           ))}
@@ -115,22 +100,19 @@ export default function PRReview({ specId }: Props) {
       </div>
 
       {showCommentBox && (
-        <div className="pr-review__comment">
-          <textarea
-            placeholder="Describe the changes needed..."
-            value={comment}
-            onChange={(e) => setComment(e.target.value)}
-            rows={3}
-          />
-        </div>
+        <textarea
+          className={styles.commentBox}
+          placeholder="Describe the changes needed..."
+          value={comment}
+          onChange={(e) => setComment(e.target.value)}
+          rows={3}
+        />
       )}
 
-      <div className="pr-review__actions">
-        <button className="pr-review__btn pr-review__btn--approve" onClick={handleApprove}>
-          Approve
-        </button>
-        <button className="pr-review__btn pr-review__btn--changes" onClick={handleRequestChanges}>
-          {showCommentBox ? 'Submit Changes Request' : 'Request Changes'}
+      <div className={styles.actions}>
+        <button className={styles.approveBtn} onClick={handleApprove}>Approve</button>
+        <button className={styles.changesBtn} onClick={handleRequestChanges}>
+          {showCommentBox ? "Submit Changes Request" : "Request Changes"}
         </button>
       </div>
     </div>

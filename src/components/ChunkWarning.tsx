@@ -1,6 +1,8 @@
-import { shouldShowChunkWarning } from '../utils/chunkAnalysis';
-import { useSpecStore } from '../store/specStore';
-import './ChunkWarning.css';
+"use client";
+
+import { shouldShowChunkWarning } from "@/utils/chunkAnalysis";
+import { useSplitSpec } from "@/lib/queries";
+import styles from "./ChunkWarning.module.css";
 
 interface Props {
   stageName: string;
@@ -9,25 +11,23 @@ interface Props {
 }
 
 export default function ChunkWarning({ stageName, content, specId }: Props) {
-  const splitSpec = useSpecStore((s) => s.splitSpec);
+  const splitMutation = useSplitSpec();
   const { level, message } = shouldShowChunkWarning(stageName, content);
 
   if (!level) return null;
 
   const handleSplit = () => {
-    const newLabel = prompt('Name for the new sub-feature:');
+    const newLabel = prompt("Name for the new sub-feature:");
     if (newLabel) {
-      splitSpec(specId, newLabel);
+      splitMutation.mutate({ specId, label: newLabel });
     }
   };
 
   return (
-    <div className={`chunk-warning chunk-warning--${level}`}>
-      <span className="chunk-warning__icon">{level === 'high' ? '⚠' : '↑'}</span>
-      <span className="chunk-warning__message">{message}</span>
-      <button className="chunk-warning__split" onClick={handleSplit}>
-        Split ↗
-      </button>
+    <div className={`${styles.warning} ${level === "high" ? styles.warningHigh : styles.warningMedium}`}>
+      <span className={styles.icon}>{level === "high" ? "\u26A0" : "\u2191"}</span>
+      <span className={styles.message}>{message}</span>
+      <button className={styles.splitBtn} onClick={handleSplit}>Split ↗</button>
     </div>
   );
 }

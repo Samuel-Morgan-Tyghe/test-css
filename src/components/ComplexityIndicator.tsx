@@ -1,26 +1,21 @@
-import { getComplexityLevel } from '../utils/chunkAnalysis';
-import type { ComplexityLevel } from '../types';
-import './ComplexityIndicator.css';
+"use client";
 
-interface Props {
-  content: string;
-  stageName: string;
-}
+import { getComplexityLevel, type ComplexityLevel } from "@/utils/chunkAnalysis";
+import styles from "./ComplexityIndicator.module.css";
 
 const labels: Record<ComplexityLevel, string> = {
-  atomic: '✓ atomic',
-  'getting-broad': '↑ getting broad',
-  'consider-splitting': '⚠ consider splitting',
+  "atomic": "\u2713 atomic",
+  "getting-broad": "\u2191 getting broad",
+  "consider-splitting": "\u26A0 consider splitting",
 };
 
-export default function ComplexityIndicator({ content, stageName }: Props) {
-  const showComplexity = stageName === 'ideation' || stageName === 'prd';
-  if (!showComplexity) return null;
+export default function ComplexityIndicator({ content, stageName }: { content: string; stageName: string }) {
+  if (stageName !== "IDEATION" && stageName !== "PRD") return null;
 
   const level = getComplexityLevel(content);
 
   return (
-    <span className={`complexity complexity--${level}`}>
+    <span className={`${styles.indicator} ${styles[level.replace("-", "_")]}`}>
       {labels[level]}
     </span>
   );

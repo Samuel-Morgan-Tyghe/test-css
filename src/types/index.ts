@@ -1,84 +1,79 @@
-export type SpecType = 'page' | 'feature' | 'sub-feature';
+import { z } from "zod";
 
-export type StageName = 'ideation' | 'prd' | 'design' | 'dev-spec' | 'test-plan' | 'pr-review';
+export const SpecType = z.enum(["PAGE", "FEATURE", "SUB_FEATURE"]);
+export type SpecType = z.infer<typeof SpecType>;
 
-export type Role = 'PM' | 'Designer' | 'Developer' | 'Tester';
+export const StageName = z.enum([
+  "IDEATION",
+  "PRD",
+  "DESIGN",
+  "DEV_SPEC",
+  "TEST_PLAN",
+  "PR_REVIEW",
+]);
+export type StageName = z.infer<typeof StageName>;
 
-export type StageStatus = 'locked' | 'active' | 'completed';
+export const StageStatus = z.enum(["LOCKED", "ACTIVE", "COMPLETED"]);
+export type StageStatus = z.infer<typeof StageStatus>;
 
-export type ComplexityLevel = 'atomic' | 'getting-broad' | 'consider-splitting';
+export const Role = z.enum(["PM", "DESIGNER", "DEVELOPER", "TESTER"]);
+export type Role = z.infer<typeof Role>;
 
-export type PRAction = 'approved' | 'changes-requested' | null;
+export const PRAction = z.enum(["APPROVED", "CHANGES_REQUESTED"]);
+export type PRAction = z.infer<typeof PRAction>;
 
-export interface Stage {
-  name: StageName;
-  label: string;
-  role: Role;
+export const STAGE_DEFINITIONS = [
+  { name: "IDEATION" as const, label: "Ideation", role: "PM" as const, placeholder: "Describe the goal, user need, and rough scope of this feature..." },
+  { name: "PRD" as const, label: "PRD", role: "PM" as const, placeholder: "Define acceptance criteria, functional requirements, and edge cases..." },
+  { name: "DESIGN" as const, label: "Design", role: "DESIGNER" as const, placeholder: "Describe the visual spec, component choices, and interaction patterns..." },
+  { name: "DEV_SPEC" as const, label: "Dev Spec", role: "DEVELOPER" as const, placeholder: "Outline the technical approach, API contracts, and data model..." },
+  { name: "TEST_PLAN" as const, label: "Test Plan", role: "TESTER" as const, placeholder: "List test cases and QA sign-off criteria..." },
+  { name: "PR_REVIEW" as const, label: "PR Review", role: "DEVELOPER" as const, placeholder: "Review the generated code. Approve or request changes." },
+] as const;
+
+// API schemas
+export const CreateSpecSchema = z.object({
+  label: z.string().min(1).max(200),
+  type: SpecType,
+  parentId: z.string().nullable().optional(),
+  workspaceId: z.string(),
+});
+
+export const UpdateStageSchema = z.object({
+  content: z.string().optional(),
+  action: z.enum(["save", "complete", "reopen"]).optional(),
+});
+
+export const SplitSpecSchema = z.object({
+  label: z.string().min(1).max(200),
+  excerptContent: z.string().optional(),
+});
+
+export const PRActionSchema = z.object({
+  action: PRAction,
+  comment: z.string().optional(),
+});
+
+// Response types
+export interface StageResponse {
+  id: string;
+  name: string;
   content: string;
-  status: StageStatus;
+  status: string;
+  order: number;
   completedAt: string | null;
   completedBy: string | null;
 }
 
-export interface Spec {
+export interface SpecResponse {
   id: string;
-  parentId: string | null;
   label: string;
-  type: SpecType;
-  stages: Stage[];
-  prAction: PRAction;
+  type: string;
+  parentId: string | null;
+  prAction: string | null;
   prComment: string;
-  children: string[];
+  children: SpecResponse[];
+  stages: StageResponse[];
   createdAt: string;
-}
-
-export const STAGE_DEFINITIONS: { name: StageName; label: string; role: Role; placeholder: string }[] = [
-  {
-    name: 'ideation',
-    label: 'Ideation',
-    role: 'PM',
-    placeholder: 'Describe the goal, user need, and rough scope of this feature...',
-  },
-  {
-    name: 'prd',
-    label: 'PRD',
-    role: 'PM',
-    placeholder: 'Define acceptance criteria, functional requirements, and edge cases...',
-  },
-  {
-    name: 'design',
-    label: 'Design',
-    role: 'Designer',
-    placeholder: 'Describe the visual spec, component choices, and interaction patterns...',
-  },
-  {
-    name: 'dev-spec',
-    label: 'Dev Spec',
-    role: 'Developer',
-    placeholder: 'Outline the technical approach, API contracts, and data model...',
-  },
-  {
-    name: 'test-plan',
-    label: 'Test Plan',
-    role: 'Tester',
-    placeholder: 'List test cases and QA sign-off criteria...',
-  },
-  {
-    name: 'pr-review',
-    label: 'PR Review',
-    role: 'Developer',
-    placeholder: 'Review the generated code. Approve or request changes.',
-  },
-];
-
-export function createDefaultStages(): Stage[] {
-  return STAGE_DEFINITIONS.map((def, i) => ({
-    name: def.name,
-    label: def.label,
-    role: def.role,
-    content: '',
-    status: i === 0 ? 'active' : 'locked',
-    completedAt: null,
-    completedBy: null,
-  }));
+  updatedAt: string;
 }
