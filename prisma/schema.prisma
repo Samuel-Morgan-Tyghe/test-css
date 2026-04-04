@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client"
+  output   = "../src/generated/prisma"
+}
+
+datasource db {
+  provider = "sqlite"
+}
+
+model Workspace {
+  id        String          @id @default(cuid())
+  name      String
+  specs     Spec[]
+  users     WorkspaceUser[]
+  createdAt DateTime        @default(now())
+}
+
+model User {
+  id         String          @id @default(cuid())
+  email      String          @unique
+  name       String
+  workspaces WorkspaceUser[]
+  stages     Stage[]
+  createdAt  DateTime        @default(now())
+}
+
+model WorkspaceUser {
+  userId      String
+  workspaceId String
+  role        String // PM, DESIGNER, DEVELOPER, TESTER
+  user        User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+
+  @@id([userId, workspaceId])
+}
+
+model Spec {
+  id          String   @id @default(cuid())
+  label       String
+  type        String // PAGE, FEATURE, SUB_FEATURE
+  parentId    String?
+  parent      Spec?    @relation("SpecTree", fields: [parentId], references: [id], onDelete: SetNull)
+  children    Spec[]   @relation("SpecTree")
+  order       Int      @default(0)
+  workspaceId String
+  workspace   Workspace @relation(fields: [workspaceId], references: [id], onDelete: Cascade)
+  stages      Stage[]
+  prAction    String?  // APPROVED, CHANGES_REQUESTED
+  prComment   String   @default("")
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+}
+
+model Stage {
+  id          String   @id @default(cuid())
+  name        String   // IDEATION, PRD, DESIGN, DEV_SPEC, TEST_PLAN, PR_REVIEW
+  content     String   @default("")
+  status      String   @default("LOCKED") // LOCKED, ACTIVE, COMPLETED
+  order       Int
+  specId      String
+  spec        Spec     @relation(fields: [specId], references: [id], onDelete: Cascade)
+  completedAt DateTime?
+  completedBy String?
+  user        User?    @relation(fields: [completedBy], references: [id], onDelete: SetNull)
+
+  @@unique([specId, name])
+}
